@@ -1,15 +1,40 @@
-/* Design Philosophy — Neo-Atelier Italian Editorial
-   The app shell should stay minimal and unobtrusive so the homepage reads
-   like a curated showroom sequence. Global wrappers must preserve the dark,
-   luxurious atmosphere and never dilute the editorial hierarchy. */
+/*
+Design reminder for this file: Neo-Atelier Italian Editorial.
+Preserve the full website structure with a stable routed shell.
+The original homepage must remain at `/`, while the current in-progress editorial build lives at `/handles`.
+*/
+import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import NotFound from "@/pages/NotFound";
+import { Route, Switch } from "wouter";
+import ErrorBoundary from "./components/ErrorBoundary";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import Home from "./pages/Home";
+import Handles from "./pages/Handles";
+import HandlesShowcase from "./pages/HandlesShowcase";
 
-import Home from "@/pages/Home";
+function Router() {
+  return (
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/handles" component={HandlesShowcase} />
+      <Route path="/handles/catalogue" component={Handles} />
+      <Route path="/404" component={NotFound} />
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Home />
-    </div>
+    <ErrorBoundary>
+      <ThemeProvider defaultTheme="dark">
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
 

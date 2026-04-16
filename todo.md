@@ -1,0 +1,4 @@
+- [ ] Preserve the existing website homepage instead of replacing it.
+- [ ] Move the new EDP Handles design to the `/handles` route.
+- [ ] Inspect current routing and restore separation between the homepage and `/handles`.
+- [ ] Verify both `/` and `/handles` render correctly after the routing fix.
