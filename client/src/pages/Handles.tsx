@@ -307,11 +307,11 @@ export default function Handles() {
                   key={category.title}
                   className="group flex h-full flex-col overflow-hidden border border-white/10 bg-white/[0.03] transition duration-500 hover:-translate-y-1 hover:border-[#c6a66b]/45"
                 >
-                  <div className="relative overflow-hidden">
+                  <div className="relative overflow-hidden bg-[#090807] leading-none">
                     <img
                       src={category.image}
                       alt={category.title}
-                      className="h-72 w-full object-cover object-center transition duration-700 group-hover:scale-[1.04]"
+                      className="block h-72 w-full object-cover object-center transition duration-700 will-change-transform [transform:translateZ(0)] group-hover:scale-[1.04]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#090807] via-[#090807]/20 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -359,7 +359,7 @@ export default function Handles() {
                   <img
                     src={item.image}
                     alt={`Cosma handle ${item.code}`}
-                    className={`w-full object-cover ${index === 0 ? "h-[32rem]" : "h-72"}`}
+                    className={`block w-full object-cover [transform:translateZ(0)] ${index === 0 ? "h-[32rem]" : "h-72"}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#090807] via-transparent to-transparent" />
                 </div>
