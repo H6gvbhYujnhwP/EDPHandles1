@@ -1,38 +1,15 @@
-/*
-Design reminder for this file: Neo-Atelier Italian Editorial.
-Persistent master header with a dark showroom atmosphere, restrained motion, and luxury editorial clarity.
-Favor calm navigation structure and refined hierarchy over generic landing-page patterns.
-*/
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
-import ErrorBoundary from "./components/ErrorBoundary";
-import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
-import Handles from "./pages/Handles";
+/* Design Philosophy — Neo-Atelier Italian Editorial
+   The app shell should stay minimal and unobtrusive so the homepage reads
+   like a curated showroom sequence. Global wrappers must preserve the dark,
+   luxurious atmosphere and never dilute the editorial hierarchy. */
 
-function Router() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/handles" component={Handles} />
-      <Route path="/404" component={NotFound} />
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
+import Home from "@/pages/Home";
 
 function App() {
   return (
-    <ErrorBoundary>
-      <ThemeProvider defaultTheme="dark">
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
-      </ThemeProvider>
-    </ErrorBoundary>
+    <div className="min-h-screen bg-background text-foreground">
+      <Home />
+    </div>
   );
 }
 

@@ -307,18 +307,19 @@ export default function Handles() {
                   key={category.title}
                   className="group flex h-full flex-col overflow-hidden border border-white/10 bg-[#120f0d] transition duration-500 hover:-translate-y-1 hover:border-[#c6a66b]/45"
                 >
-                  <div className="relative z-10 -mb-px overflow-hidden bg-[#090807] leading-none">
+                  <div className="relative overflow-hidden bg-[#090807] leading-none">
                     <img
                       src={category.image}
                       alt={category.title}
                       className="block h-72 w-full object-cover object-center transition duration-700 will-change-transform [transform:translateZ(0)] group-hover:scale-[1.04]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#090807] via-[#090807]/20 to-transparent" />
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[2px] bg-[linear-gradient(90deg,rgba(198,166,107,0.18),rgba(42,31,22,0.92),rgba(198,166,107,0.18))]" />
                     <div className="absolute bottom-0 left-0 right-0 p-6">
                       <p className="font-[Manrope] text-[0.68rem] uppercase tracking-[0.3em] text-[#d4bd95]">{category.source}</p>
                     </div>
                   </div>
-                  <div className="relative z-[1] flex flex-1 flex-col space-y-5 bg-[#120f0d] p-7">
+                  <div className="relative flex flex-1 flex-col space-y-5 border-t border-[#2b2118] bg-[#120f0d] p-7">
                     <h3 className="font-[Cormorant_Garamond] text-3xl text-[#f2ebdf]">{category.title}</h3>
                     <p className="font-[Manrope] text-sm leading-7 text-[#b8ad99]">{category.description}</p>
                     <a
