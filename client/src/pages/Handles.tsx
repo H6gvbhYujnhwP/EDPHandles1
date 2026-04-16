@@ -209,7 +209,7 @@ export default function Handles() {
 
       <main>
         <section className="relative overflow-hidden border-b border-white/10">
-          <div className="container grid min-h-[calc(100vh-5rem)] items-center gap-14 py-16 lg:grid-cols-[1.02fr_0.98fr] lg:py-24">
+          <div className="container grid min-h-[calc(100vh-5rem)] items-center gap-14 py-16 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 lg:py-24">
             <div className="relative max-w-2xl">
               <div className="mb-8 inline-flex items-center gap-3 border border-white/12 bg-white/4 px-4 py-3 text-[#e2d4be] shadow-[0_18px_60px_rgba(0,0,0,0.2)]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#c6a66b]" />
@@ -258,25 +258,27 @@ export default function Handles() {
               </div>
             </div>
 
-            <div className="relative lg:pl-8">
+            <div className="relative lg:pl-4">
               <div className="absolute -inset-6 hidden border border-[#b08d57]/20 lg:block" />
               <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#15110e] shadow-[0_40px_100px_rgba(0,0,0,0.45)]">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/fRVbFQ3JDagBgP7ipYs35A/edp-collection-modern-kitchen-h3DZ3cFDwrFHTeYwoHduPj.webp"
-                  alt="Warm kitchen interior with premium brass hardware styling"
-                  className="h-[34rem] w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#090807] via-[#090807]/18 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 grid gap-6 border-t border-white/10 bg-black/30 p-8 backdrop-blur-md sm:grid-cols-[1fr_auto] sm:items-end">
+                <div className="relative overflow-hidden border-b border-white/10 bg-[#11100f]">
+                  <img
+                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/fRVbFQ3JDagBgP7ipYs35A/edp-collection-modern-kitchen-h3DZ3cFDwrFHTeYwoHduPj.webp"
+                    alt="Warm kitchen interior with premium brass hardware styling"
+                    className="h-[20rem] w-full object-cover object-center sm:h-[24rem] lg:h-[26rem]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#090807]/55 via-transparent to-transparent" />
+                </div>
+                <div className="grid gap-6 bg-[linear-gradient(180deg,rgba(16,13,11,0.98),rgba(10,8,7,1))] p-7 sm:p-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
                   <div>
-                    <p className="font-[Manrope] text-xs uppercase tracking-[0.3em] text-[#b89f78]">EDP Curated Selection</p>
-                    <p className="mt-3 max-w-md font-[Cormorant_Garamond] text-3xl leading-tight text-[#f4ede2]">
+                    <p className="font-[Manrope] text-[0.68rem] uppercase tracking-[0.3em] text-[#b89f78]">EDP Curated Selection</p>
+                    <p className="mt-4 max-w-md font-[Cormorant_Garamond] text-3xl leading-[1.02] text-[#f4ede2] sm:text-[2.3rem]">
                       Real product-led browsing within the same editorial design language.
                     </p>
                   </div>
-                  <div className="border-l border-white/10 pl-6">
-                    <p className="font-[Manrope] text-xs uppercase tracking-[0.28em] text-[#a58d67]">Phase One</p>
-                    <p className="mt-2 font-[Manrope] text-sm leading-7 text-[#d5cab8]">
+                  <div className="border-l-0 border-white/10 pt-1 lg:border-l lg:pl-6">
+                    <p className="font-[Manrope] text-[0.68rem] uppercase tracking-[0.28em] text-[#a58d67]">Phase One</p>
+                    <p className="mt-3 max-w-xs font-[Manrope] text-sm leading-7 text-[#d5cab8]">
                       Handles page as the master template for the wider product architecture.
                     </p>
                   </div>
@@ -287,7 +289,7 @@ export default function Handles() {
         </section>
 
         <section id="category-edit" className="border-b border-white/10 py-24 lg:py-32">
-          <div className="container grid gap-14 lg:grid-cols-[0.38fr_0.62fr] lg:items-start">
+          <div className="container grid gap-14 lg:grid-cols-[0.36fr_0.64fr] lg:items-start">
             <div className="lg:sticky lg:top-28">
               <p className="font-[Manrope] text-xs uppercase tracking-[0.28em] text-[#b89f78]">Category overview</p>
               <h2 className="mt-5 max-w-sm font-[Cormorant_Garamond] text-5xl leading-[0.95] font-light tracking-[-0.04em] text-[#f4ede2] sm:text-6xl">
@@ -299,31 +301,29 @@ export default function Handles() {
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2">
-              {handleCategories.map((category, index) => (
+            <div className="grid gap-8 md:grid-cols-2 md:auto-rows-fr">
+              {handleCategories.map((category) => (
                 <article
                   key={category.title}
-                  className={`group overflow-hidden border border-white/10 bg-white/[0.03] transition duration-500 hover:-translate-y-1 hover:border-[#c6a66b]/45 ${
-                    index % 3 === 0 ? "md:translate-y-10" : ""
-                  }`}
+                  className="group flex h-full flex-col overflow-hidden border border-white/10 bg-white/[0.03] transition duration-500 hover:-translate-y-1 hover:border-[#c6a66b]/45"
                 >
                   <div className="relative overflow-hidden">
                     <img
                       src={category.image}
                       alt={category.title}
-                      className="h-72 w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+                      className="h-72 w-full object-cover object-center transition duration-700 group-hover:scale-[1.04]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#090807] via-[#090807]/20 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6">
                       <p className="font-[Manrope] text-[0.68rem] uppercase tracking-[0.3em] text-[#d4bd95]">{category.source}</p>
                     </div>
                   </div>
-                  <div className="space-y-5 p-7">
+                  <div className="flex flex-1 flex-col space-y-5 p-7">
                     <h3 className="font-[Cormorant_Garamond] text-3xl text-[#f2ebdf]">{category.title}</h3>
                     <p className="font-[Manrope] text-sm leading-7 text-[#b8ad99]">{category.description}</p>
                     <a
                       href="#trade-support"
-                      className="inline-flex items-center gap-3 font-[Manrope] text-xs uppercase tracking-[0.24em] text-[#f0dfc2] transition hover:text-white"
+                      className="mt-auto inline-flex items-center gap-3 font-[Manrope] text-xs uppercase tracking-[0.24em] text-[#f0dfc2] transition hover:text-white"
                     >
                       Request selection advice
                       <ArrowRight className="h-4 w-4" />
