@@ -2,3 +2,10 @@
 - [ ] Move the new EDP Handles design to the `/handles` route.
 - [ ] Inspect current routing and restore separation between the homepage and `/handles`.
 - [ ] Verify both `/` and `/handles` render correctly after the routing fix.
+- [ ] Keep the homepage and all existing site sections intact during all further `/handles` work.
+- [ ] Limit upcoming development changes to the `/handles` section only.
+- [ ] Ensure no future update replaces the homepage, navigation structure, or other existing pages.
+- [ ] Map the six agreed handle families into the current `/handles` page structure.
+- [ ] Replace or extend the current `/handles` family section so all six agreed families are visible.
+- [ ] Preserve the homepage and all non-`/handles` routes while integrating the six families.
+- [ ] Validate both `/handles` content and wider site routing after the integration.

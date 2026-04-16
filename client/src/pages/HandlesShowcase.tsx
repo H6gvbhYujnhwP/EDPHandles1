@@ -1,24 +1,58 @@
-/* Design Philosophy — Neo-Atelier Italian Editorial
-   This page should feel like a private showroom catalogue: asymmetrical,
-   tactile, calm, and product-led. Use dark architectural surfaces, ivory
-   typography, brass accents, and controlled motion to communicate luxury
-   craftsmanship rather than generic commerce. */
+/*
+Design reminder for this file: Neo-Atelier Italian Editorial.
+This page must remain a refined `/handles` destination within the wider site.
+Preserve the dark showroom atmosphere, ivory serif hierarchy, brass accents, and asymmetrical pacing.
+Integrate the six agreed handle families into the editorial structure without disturbing the homepage or other routes.
+*/
 
-const showcase = [
+const handleFamilies = [
   {
     number: "01",
-    title: "Architectural Pulls",
-    text: "Long-form silhouettes with disciplined lines for entrances, wardrobes, and statement joinery.",
+    title: "Bridge Handles",
+    source: "Ponte · Ponte Modulari",
+    text: "Architectural pull handles with composed proportions and an assured grip profile for kitchens, wardrobes, and bespoke cabinetry.",
+    image:
+      "https://cosma.design/images/products/1731921599203_cosma-handle-13063_C.jpg",
   },
   {
     number: "02",
-    title: "Cabinet Collections",
-    text: "Balanced proportions and tactile finishes designed to complement contemporary millwork.",
+    title: "Integrated Handles",
+    source: "Presa Chiusa · Integrate",
+    text: "Concealed and integrated solutions for cleaner elevations, quieter joinery lines, and more minimal contemporary compositions.",
+    image:
+      "https://cosma.design/images/products/1731921599203_cosma-handle-13063_D.jpg",
   },
   {
     number: "03",
-    title: "Signature Finishes",
-    text: "Brushed brass, smoked steel, satin metal, and matte black presented with showroom precision.",
+    title: "Vertical Handles",
+    source: "Verticali · Verticali Integrate",
+    text: "Elegant upright formats for tall cabinetry and pantry runs where rhythm, reach, and alignment matter as much as finish.",
+    image:
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    number: "04",
+    title: "Appliance Handles",
+    source: "Elettrodomestici",
+    text: "Purpose-led hardware for integrated appliances and larger frontages where balance, strength, and finish integrity are essential.",
+    image:
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    number: "05",
+    title: "Knobs & Small Hardware",
+    source: "Pomoli",
+    text: "Compact tactile pieces that add a jewellery-like final note to furniture, dressers, and carefully detailed cabinet fronts.",
+    image:
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    number: "06",
+    title: "Special Designs",
+    source: "Speciali",
+    text: "More sculptural, individual forms selected for design-led interiors that need a stronger hardware signature without losing restraint.",
+    image:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
@@ -48,21 +82,21 @@ const applications = [
   "Interior refurbishment",
 ];
 
-function Home() {
+export default function HandlesShowcase() {
   return (
-    <main className="relative overflow-hidden">
+    <main className="relative overflow-hidden bg-[#0a0908] text-stone-100">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,166,108,0.14),transparent_24%)]" />
 
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[rgba(12,11,10,0.72)] backdrop-blur-2xl">
         <div className="container flex items-center justify-between py-5">
-          <a href="#top" className="flex items-center gap-3 text-sm tracking-[0.32em] text-stone-100">
+          <a href="/" className="flex items-center gap-3 text-sm tracking-[0.32em] text-stone-100">
             <span className="inline-block h-2 w-2 rounded-full bg-[rgba(201,166,108,0.95)] shadow-[0_0_18px_rgba(201,166,108,0.8)]" />
             EDP HANDLES
           </a>
 
           <nav className="hidden items-center gap-8 text-sm text-stone-300 lg:flex">
             <a href="#collections" className="hover:text-stone-50">
-              Collections
+              Families
             </a>
             <a href="#story" className="hover:text-stone-50">
               Story
@@ -101,10 +135,10 @@ function Home() {
                 <p className="label-kicker">Option A — Neo-Atelier Italian Editorial</p>
                 <div className="space-y-5">
                   <h1 className="font-display text-balance text-5xl font-semibold leading-[0.92] text-stone-50 sm:text-6xl md:text-7xl">
-                    Hardware presented with the restraint of a private showroom.
+                    Six families, presented with the restraint of a private showroom.
                   </h1>
                   <p className="max-w-lg text-base leading-8 text-stone-300 sm:text-lg">
-                    EDP Handles frames architectural pulls, cabinet hardware, and finish-led detail within a calm editorial experience that prioritises touch, proportion, and material confidence.
+                    The `/handles` section now frames the agreed family structure through a calmer editorial lens so clients can understand the range without losing the material confidence of the brand.
                   </p>
                 </div>
                 <div className="flex flex-col gap-4 sm:flex-row">
@@ -112,21 +146,21 @@ function Home() {
                     href="#collections"
                     className="inline-flex items-center justify-center rounded-full bg-[rgba(201,166,108,0.92)] px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-stone-950 transition duration-300 hover:bg-[rgba(220,187,129,0.98)]"
                   >
-                    Explore Collections
+                    Explore Families
                   </a>
                   <a
-                    href="#story"
+                    href="/handles/catalogue"
                     className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-stone-100 transition duration-300 hover:border-[rgba(214,192,154,0.42)] hover:bg-white/10"
                   >
-                    View Editorial Story
+                    View Catalogue Layout
                   </a>
                 </div>
               </div>
 
               <div className="grid gap-5 border-t border-white/10 pt-8 text-sm text-stone-300 md:grid-cols-3">
                 <div>
-                  <p className="mb-2 text-xs uppercase tracking-[0.28em] text-stone-500">Material Focus</p>
-                  <p>Brushed brass, satin metal, smoked finishes, and matte architectural blacks.</p>
+                  <p className="mb-2 text-xs uppercase tracking-[0.28em] text-stone-500">Collection Focus</p>
+                  <p>Bridge, integrated, vertical, appliance, knob, and special-design families arranged for easier navigation.</p>
                 </div>
                 <div>
                   <p className="mb-2 text-xs uppercase tracking-[0.28em] text-stone-500">Specification Mood</p>
@@ -143,23 +177,55 @@ function Home() {
       </section>
 
       <section id="collections" className="relative py-16 md:py-24">
-        <div className="container grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
-          <div className="space-y-6">
-            <p className="label-kicker">Curated Categories</p>
-            <h2 className="font-display text-4xl font-medium leading-tight text-stone-100 md:text-5xl">
-              Presented less like stock, and more like collected objects of use.
-            </h2>
-            <p className="max-w-xl text-base leading-8 text-stone-400">
-              The collections are framed through proportion, finish, and architectural setting rather than visual clutter. Each range is introduced with a sense of weight, detail, and interior relevance.
-            </p>
+        <div className="container space-y-12">
+          <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
+            <div className="space-y-6">
+              <p className="label-kicker">The Six Families</p>
+              <h2 className="font-display text-4xl font-medium leading-tight text-stone-100 md:text-5xl">
+                A complete family structure, edited into a clearer collection view.
+              </h2>
+              <p className="max-w-xl text-base leading-8 text-stone-400">
+                Instead of broad mood statements alone, the section now introduces the full six-family range. Each family is positioned as a practical collection type while still reading like part of the same showroom narrative.
+              </p>
+            </div>
+
+            <div className="rounded-[1.6rem] border border-[rgba(201,166,108,0.18)] bg-[rgba(255,255,255,0.03)] p-6 md:p-7">
+              <p className="mb-3 text-xs uppercase tracking-[0.24em] text-stone-500">Editorial Reading Order</p>
+              <p className="leading-7 text-stone-300">
+                The families move from core architectural pulls into integrated and vertical formats, then on to appliance solutions, smaller tactile pieces, and the more expressive special-design offer.
+              </p>
+            </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-3">
-            {showcase.map((item) => (
-              <article key={item.number} className="editorial-panel rounded-[1.6rem] p-6 transition duration-500 hover:-translate-y-1 hover:border-[rgba(214,192,154,0.32)]">
-                <p className="mb-8 font-display text-3xl text-[rgba(201,166,108,0.9)]">{item.number}</p>
-                <h3 className="mb-3 text-xl font-semibold text-stone-100">{item.title}</h3>
-                <p className="leading-7 text-stone-400">{item.text}</p>
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {handleFamilies.map((family, index) => (
+              <article
+                key={family.title}
+                className="group editorial-panel overflow-hidden rounded-[1.7rem] transition duration-500 hover:-translate-y-1 hover:border-[rgba(214,192,154,0.32)]"
+              >
+                <div className="relative h-64 overflow-hidden border-b border-white/10">
+                  <img
+                    src={family.image}
+                    alt={family.title}
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.5))]" />
+                  <div className="absolute left-5 top-5 flex items-center gap-3">
+                    <span className="font-display text-3xl text-[rgba(201,166,108,0.9)]">{family.number}</span>
+                    <span className="text-xs uppercase tracking-[0.24em] text-stone-300">{family.source}</span>
+                  </div>
+                  <div className="absolute bottom-5 left-5 right-5">
+                    <p className="text-xs uppercase tracking-[0.24em] text-stone-400">Family {index + 1}</p>
+                    <h3 className="mt-2 font-display text-3xl leading-tight text-stone-50">{family.title}</h3>
+                  </div>
+                </div>
+                <div className="space-y-5 p-6">
+                  <p className="leading-7 text-stone-400">{family.text}</p>
+                  <div className="flex items-center justify-between border-t border-white/10 pt-4 text-xs uppercase tracking-[0.24em] text-stone-500">
+                    <span>Collection overview</span>
+                    <span className="text-[rgba(201,166,108,0.88)]">EDP Handles</span>
+                  </div>
+                </div>
               </article>
             ))}
           </div>
@@ -182,24 +248,24 @@ function Home() {
             <div className="space-y-5">
               <p className="label-kicker">Material Story</p>
               <h2 className="font-display text-4xl font-medium leading-tight text-stone-100 md:text-5xl">
-                A composition of touch, finish, and engineered calm.
+                The family structure is now clearer, while the showroom tone remains intact.
               </h2>
               <p className="text-base leading-8 text-stone-400">
-                This direction treats the handle not as an afterthought, but as the final tactile note in a room. Edges are softened, lines remain disciplined, and finishes are allowed to catch light in ways that feel considered rather than decorative.
+                This update keeps the editorial restraint of Option A but gives the page a more usable collection logic. Clients can scan the six families quickly, then move deeper into finish, application, and consultation conversations without losing the sense of brand refinement.
               </p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-[1.4rem] border border-white/10 bg-white/[0.03] p-5">
-                <p className="mb-2 text-xs uppercase tracking-[0.24em] text-stone-500">Editorial Framing</p>
+                <p className="mb-2 text-xs uppercase tracking-[0.24em] text-stone-500">Collection Clarity</p>
                 <p className="leading-7 text-stone-300">
-                  Oversized serif headings and narrow explanatory notes create the pacing of a printed catalogue.
+                  The six-family edit replaces the earlier abstract category trio with a complete, decision-friendly range view.
                 </p>
               </div>
               <div className="rounded-[1.4rem] border border-white/10 bg-white/[0.03] p-5">
                 <p className="mb-2 text-xs uppercase tracking-[0.24em] text-stone-500">Surface Discipline</p>
                 <p className="leading-7 text-stone-300">
-                  Dark mineral tones, softened reflections, and brass accents hold the visual identity together.
+                  Dark mineral tones, softened reflections, and brass accents continue to hold the visual identity together.
                 </p>
               </div>
             </div>
@@ -233,8 +299,8 @@ function Home() {
                           : index === 1
                             ? "linear-gradient(90deg, #3b3d42, #7a7d82, #adb0b5)"
                             : index === 2
-                              ? "linear-gradient(90deg, #080808, #232323, #454545)"
-                              : "linear-gradient(90deg, #7f7e7b, #bebcb8, #ece7e0)",
+                              ? "linear-gradient(90deg, #0f0f10, #26272a, #4a4a4c)"
+                              : "linear-gradient(90deg, #5e6168, #a9b0bc, #d6dce5)",
                     }}
                   />
                 </div>
@@ -247,86 +313,67 @@ function Home() {
       </section>
 
       <section className="relative py-16 md:py-24">
-        <div className="container grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 hero-shadow">
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/fRVbFQ3JDagBgP7ipYs35A/edp-architectural-interior-6igcymZMf8AGvuTBU4fSfi.webp"
-              alt="Architectural interior with bespoke joinery and premium handles"
-              className="h-full min-h-[520px] w-full object-cover"
-            />
-          </div>
-
-          <div className="space-y-8 lg:px-8">
-            <div className="space-y-5">
-              <p className="label-kicker">Interior Application</p>
-              <h2 className="font-display text-4xl font-medium leading-tight text-stone-100 md:text-5xl">
-                Chosen to complete joinery, not compete with it.
-              </h2>
-              <p className="text-base leading-8 text-stone-400">
-                In the right setting, hardware becomes part of the room’s discipline. The handle should anchor the hand, register in the light, and sit in conversation with timber, stone, lacquer, and shadow.
-              </p>
-            </div>
-
-            <div className="grid gap-3 sm:grid-cols-2">
+        <div className="container grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="space-y-6">
+            <p className="label-kicker">Interior Application</p>
+            <h2 className="font-display text-4xl font-medium leading-tight text-stone-100 md:text-5xl">
+              Chosen to complete joinery, not compete with it.
+            </h2>
+            <p className="max-w-xl text-base leading-8 text-stone-400">
+              In the right setting, hardware becomes part of the room’s discipline. The handle should anchor the hand, register in the light, and sit in conversation with timber, stone, lacquer, and shadow.
+            </p>
+            <div className="flex flex-wrap gap-3">
               {applications.map((item) => (
-                <div key={item} className="rounded-full border border-white/12 bg-white/[0.03] px-5 py-4 text-sm uppercase tracking-[0.22em] text-stone-200">
+                <span
+                  key={item}
+                  className="rounded-full border border-[rgba(214,192,154,0.18)] bg-white/[0.03] px-4 py-2 text-xs uppercase tracking-[0.22em] text-stone-300"
+                >
                   {item}
-                </div>
+                </span>
               ))}
             </div>
+          </div>
+
+          <div className="editorial-panel overflow-hidden rounded-[2rem] p-4 md:p-5">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/fRVbFQ3JDagBgP7ipYs35A/edp-architectural-interior-UeB5quf5SZTnWuY5qpLt8R.webp"
+              alt="Architectural interior with refined metal hardware and dark joinery"
+              className="h-[420px] w-full rounded-[1.5rem] object-cover"
+            />
           </div>
         </div>
       </section>
 
-      <section id="contact" className="relative pb-20 pt-10 md:pb-28 md:pt-16">
+      <section id="contact" className="relative pb-20 pt-8 md:pb-28">
         <div className="container">
-          <div
-            className="grain-overlay hero-shadow relative overflow-hidden rounded-[2.2rem] border border-[rgba(214,192,154,0.18)] px-8 py-10 md:px-14 md:py-14"
-            style={{
-              backgroundImage:
-                "linear-gradient(120deg, rgba(8,8,8,0.9), rgba(18,18,18,0.78)), url('https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/fRVbFQ3JDagBgP7ipYs35A/edp-dark-metal-texture-WAHzJonXXrFGTJ6mjhwtmr.webp')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <div className="relative z-10 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-              <div className="max-w-3xl space-y-5">
-                <p className="label-kicker">Consultation</p>
-                <h2 className="font-display text-4xl font-medium leading-tight text-stone-100 md:text-5xl">
-                  If Option A feels right, the next step is a sharper product and content pass.
-                </h2>
-                <p className="max-w-2xl text-base leading-8 text-stone-300">
-                  This first direction establishes the visual language. Once approved, the same framework can be expanded into a fuller collection structure, deeper product presentation, and then a second exploration through Option B.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-4 sm:flex-row lg:flex-col">
+          <div className="relative overflow-hidden rounded-[2rem] border border-[rgba(214,192,154,0.18)] bg-[linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] px-8 py-10 md:px-12 md:py-14">
+            <div className="absolute inset-y-0 right-0 hidden w-[42%] bg-[url('https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/fRVbFQ3JDagBgP7ipYs35A/edp-dark-metal-texture-bhrrskYzJm7Gb44S4N6XQ4.webp')] bg-cover bg-center opacity-30 lg:block" />
+            <div className="relative z-10 max-w-2xl space-y-6">
+              <p className="label-kicker">Consultation</p>
+              <h2 className="font-display text-4xl font-medium leading-tight text-stone-100 md:text-5xl">
+                The six-family structure is in place. The next pass can sharpen product depth.
+              </h2>
+              <p className="text-base leading-8 text-stone-300">
+                This update establishes the agreed families inside the `/handles` section while preserving the rest of the site. From here, the page can evolve into deeper family pages, richer product data, and real enquiry pathways.
+              </p>
+              <div className="flex flex-col gap-4 sm:flex-row">
                 <a
                   href="mailto:hello@edphandles.com"
-                  className="inline-flex items-center justify-center rounded-full bg-[rgba(201,166,108,0.92)] px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-stone-950 transition duration-300 hover:bg-[rgba(220,187,129,1)]"
+                  className="inline-flex items-center justify-center rounded-full bg-[rgba(201,166,108,0.92)] px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-stone-950 transition duration-300 hover:bg-[rgba(220,187,129,0.98)]"
                 >
                   hello@edphandles.com
                 </a>
                 <a
-                  href="#top"
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-stone-100 transition duration-300 hover:border-[rgba(214,192,154,0.42)] hover:bg-white/5"
+                  href="/handles/catalogue"
+                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-stone-100 transition duration-300 hover:border-[rgba(214,192,154,0.42)] hover:bg-white/10"
                 >
-                  Back to Top
+                  Open Full Catalogue View
                 </a>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <footer className="border-t border-white/8 py-8">
-        <div className="container flex flex-col gap-4 text-sm text-stone-500 md:flex-row md:items-center md:justify-between">
-          <p>EDP Handles — editorial presentation for premium architectural hardware.</p>
-          <p>Option A implemented first, with Option B ready for a second design pass after review.</p>
-        </div>
-      </footer>
     </main>
   );
 }
-
-export default Home;
