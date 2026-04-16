@@ -10,11 +10,13 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import Handles from "./pages/Handles";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/handles" component={Handles} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

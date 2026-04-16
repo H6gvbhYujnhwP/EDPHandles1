@@ -127,6 +127,7 @@ export default function Home() {
 
             <nav className="hidden items-center gap-8 lg:flex">
               {[
+                ["Handles", "/handles"],
                 ["Collections", "#collections"],
                 ["Heritage", "#heritage"],
                 ["Trade Portal", "#trade"],
@@ -165,6 +166,7 @@ export default function Home() {
             <div className="border-t border-white/10 py-4 lg:hidden">
               <div className="flex flex-col gap-4">
                 {[
+                  ["Handles", "/handles"],
                   ["Collections", "#collections"],
                   ["Heritage", "#heritage"],
                   ["Trade Portal", "#trade"],
@@ -216,8 +218,8 @@ export default function Home() {
                   asChild
                   className="group w-full rounded-none border border-[#d7be92]/45 bg-transparent px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.22em] text-[#f2e6d1] transition hover:border-[#d7be92] hover:bg-[#d7be92]/10 sm:w-auto"
                 >
-                  <a href="#collections">
-                    Explore Collections
+                  <a href="/handles">
+                    Browse Handles
                     <MoveRight className="ml-3 h-4 w-4 transition duration-300 group-hover:translate-x-1" />
                   </a>
                 </Button>
