@@ -66,7 +66,7 @@ The current phase is to turn `/handles` from a strong editorial overview into a 
 | [x] | Fix the internal Technical Sheet modal so it remains contained and readable on mobile layouts |
 | [x] | Add a premium branded favicon aligned with the dark editorial EDP identity |
 | [ ] | Decide whether to introduce dedicated product-detail views inside EDP or remain at family-listing depth for the next release |
-| [ ] | Push the completed multi-family rollout to `main` |
+| [x] | Push the completed multi-family rollout to `main` |
 | [ ] | Confirm the live deployment after the multi-family rollout reaches production |
 
 ## Next Planned Build Order
