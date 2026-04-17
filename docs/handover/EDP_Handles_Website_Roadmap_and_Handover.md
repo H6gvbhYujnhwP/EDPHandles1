@@ -1,159 +1,135 @@
 # EDP Handles Website Roadmap and Handover
 
-## Project position
+## Project Position
 
-This document is the working handover for the **full EDP Handles website**. It is intended to let a new chat continue the project without losing the agreed structure, the build order, or the key constraints.
+This document is the working handover for the **full EDP Handles website**. It is intended to let a new chat continue the project without losing the agreed structure, the completed implementation state, or the non-negotiable live-site rules.
 
-The most important rule is that this project is now treated as **one whole progressive website**. No future work should replace the homepage or isolate `/handles` as if it were a separate temporary site. All changes must extend the live website as a single coherent build.
+The governing principle remains unchanged: **EDP Handles is one progressive live website**. The homepage at `/` must remain intact unless the user explicitly requests a homepage redesign. The `/handles` section is being expanded as part of the same live site, not as a separate microsite or temporary build.
 
-## Confirmed project rules
+## Confirmed Project Rules
 
 | Area | Confirmed decision |
 |---|---|
 | Site scope | The website must remain a **full site** at all times. |
-| Current development focus | The active build focus is the **`/handles` section**. |
+| Current development focus | The active build focus is the **`/handles` section** and its connected journeys. |
 | Homepage protection | The homepage on `/` must remain intact unless the user explicitly asks for a homepage redesign. |
-| Development approach | Build progressively by adding depth, links, pages, and working user journeys. |
-| Deployment model | The site is now running as a **Node web service** and must stay deployable as a real working website. |
-| Git workflow | The latest full site has been pushed to GitHub and should continue to be treated as the current codebase. |
-| Render workflow | Render should always reflect the **full current website**, not a partial page build. |
+| Development approach | Build progressively by extending the existing live architecture. |
+| Deployment model | The site runs as a **Node/Vite/React web service** and must remain deployable as a real working website. |
+| Git workflow | Changes are committed to GitHub `main`, which drives deployment. |
+| Render workflow | Render should always reflect the **full current website**, not an isolated feature build. |
+| Content strategy | Cosma is an **upstream reference source**, not something to mirror blindly. EDP must remain a curated UK-facing premium distributor experience. |
 
-## What has already been completed
+## What Has Already Been Completed
 
-The project has already gone through several important phases. First, the site structure was protected so the homepage was not lost. Second, the new **editorial handles direction** was introduced and moved into the `/handles` route rather than replacing `/`. Third, the **six agreed handle families** were integrated into the `/handles` page. Finally, the full current website was pushed to GitHub and deployed so the live domain now reflects the latest whole-site version.
+The project has moved well beyond the earlier planning stage. The homepage has been preserved, the `/handles` route has been turned into a structured collection hub, dedicated family pages now exist, imported Cosma-led product data has been brought into the family pages, and internal EDP-controlled Technical Sheet popups now keep specification journeys inside the site.
 
 | Completed workstream | Current status |
 |---|---|
 | Homepage preserved on `/` | Complete |
-| `/handles` route established | Complete |
-| Editorial design direction applied to handles | Complete |
-| Six handle families integrated into `/handles` | Complete |
-| Full site treated as one progressive build | Confirmed |
-| GitHub/Render deployment restored | Complete |
+| `/handles` route established and protected | Complete |
+| Six family structure integrated into `/handles` | Complete |
+| Dedicated family routes created | Complete |
+| Imported family listings added to the family pages | Complete |
+| Internal Technical Sheet popups implemented | Complete |
+| Shared master header unified across routes | Complete |
+| Full family cards on `/handles` made clickable | Complete |
+| Mobile Technical Sheet containment fix completed | Complete |
+| Premium favicon added | Complete |
+| GitHub push workflow restored and used successfully | Complete |
 
-## Current interpretation of the website
+## Current Website Interpretation
 
-The live website should now be understood as a premium brand site with a growing collection architecture.
+The website should now be understood as a premium dark-editorial brand site with a working product-family structure emerging inside `/handles`.
 
-The homepage remains the main entry point for the overall brand. The `/handles` section is the first major collection area being expanded into a stronger commercial destination. The `/handles` page currently works as an **editorial collection overview** rather than a fully developed product system.
+The homepage remains the main brand-led entry point. The `/handles` route now acts as the editorial collection overview. The family routes at `/handles/:slug` now provide the first real product-depth layer by combining EDP framing with imported catalogue content, internal specification viewing, and enquiry pathways.
 
-That means the next stage of work is not to redesign everything again. Instead, it is to deepen the existing structure so the site becomes more functional, more connected, and more commercially complete.
+This means the next phase is **not** to re-argue whether family pages should exist. They already do. The next phase is to decide how much deeper the product architecture should become and which new product content should be added next.
 
-## The six families: what they mean operationally
+## Live Route Structure Now in Place
 
-The six families on `/handles` should no longer be treated as simple visual blocks. They should become the basis of the collection structure.
-
-| Collection layer | Meaning |
+| Route layer | Current role |
 |---|---|
-| `/handles` | Category overview and editorial hub |
-| Family blocks on `/handles` | Entry points into deeper collection content |
-| Future family pages | Dedicated pages for each family |
-| Enquiry/specification routes | Commercial conversion paths from collection content |
+| `/` | Protected homepage and brand-led entry point |
+| `/handles` | Editorial overview and family hub |
+| `/handles/catalogue` | Alternate catalogue-led handles route |
+| `/handles/bridge` | Live imported family-detail page |
+| `/handles/integrated` | Live imported family-detail page |
+| `/handles/vertical` | Live imported family-detail page |
+| `/handles/appliance` | Live imported family-detail page |
+| `/handles/knobs` | Live imported family-detail page |
+| `/handles/special-designs` | Live imported family-detail page |
+| `/404` | Not found route |
 
-The next goal is to make the six families useful as navigation and sales structure, not just presentation.
+## Family Structure: Current Operational Reading
 
-## Recommended next build order
+The six family pages should now be treated as the live basis of the collection architecture, not as placeholders.
 
-The safest and most logical sequence from here is shown below.
-
-| Priority | Next step | Why it matters |
+| Family | Current state | Notes |
 |---|---|---|
-| 1 | Make all key buttons and CTAs on `/handles` lead somewhere meaningful | This turns the page from a static showcase into a working section of the website. |
-| 2 | Decide the canonical names and hierarchy of the six families | This ensures the structure is stable before subpages are built. |
-| 3 | Add dedicated pages for each handle family | This gives the site depth, improves navigation, and supports better collection storytelling. |
-| 4 | Add deeper content to each family | This makes each collection commercially useful rather than decorative. |
-| 5 | Connect homepage pathways into `/handles` more clearly | This improves user flow across the full site. |
-| 6 | Build the next connected sections such as finishes, projects, and enquiry flows | This expands the site beyond the collection hub into a full commercial journey. |
+| Bridge | Imported and live | Includes Bridge and Modular Bridge source content |
+| Integrated | Imported and live | Currently absorbs Closed Grip and Modular Closed Grip for now |
+| Vertical | Imported and live | Includes Vertical and Vertical Integrated source content |
+| Appliance | Imported and live | Smaller imported family but active |
+| Knobs & Small Hardware | Imported and live | Active as a family destination |
+| Special Designs | Imported and live | Active as a family destination |
 
-## What “make the buttons work” means
+A key structural note must be preserved: **Closed Grip** and **Modular Closed Grip** are currently grouped under **Integrated**, but the data has intentionally been structured so they can be separated later if required.
 
-This was an important part of the discussion and should be preserved clearly.
+## Technical Sheet Pattern: Current Rule
 
-At present, some interface elements may still behave more like design prompts than completed navigation routes. The next implementation pass should give each major button a real destination.
+The product-card specification journey has already been changed from an external-source action into an internal EDP experience.
 
-| Button or CTA type | Preferred behaviour |
+| Pattern | Required behaviour |
 |---|---|
-| Explore Collections | Jump to the family overview or a dedicated collection index section |
-| View Editorial Story | Lead to story content, brand narrative, or a refined section on the same page |
-| Family CTA | Open a family detail page such as `/handles/family-name` |
-| Request Consultation | Lead to a real enquiry form, consultation route, or contact page |
-| Finish-related CTA | Lead to a future finishes page or anchored finishes section |
+| Product card technical action | Opens an internal `Technical Sheet` modal |
+| External source links from cards | Do not use |
+| PDF download requirement | Do not introduce for this feature |
+| Technical content model | Show imported sizing, finish, code, and row-based technical data inside the EDP interface |
+| Mobile behaviour | Must remain visually contained and scrollable on small screens |
 
-The rule is simple: no important CTA should remain decorative if it appears to promise an action.
+## Navigation Principles Now Confirmed
 
-## Recommended family page structure
+The site should continue using a **persistent shared header** across the homepage, `/handles`, `/handles/catalogue`, and the family pages. Navigation should feel like one connected premium website rather than detached route-owned experiences.
 
-If family pages are created next, each one should follow a consistent framework so the site grows cleanly.
-
-| Section | Purpose |
+| Navigation principle | Current expectation |
 |---|---|
-| Hero | Introduce the family with a clear visual and positioning statement |
-| Family overview | Explain the design character and intended use |
-| Ideal applications | Show where the family fits: kitchens, wardrobes, joinery, hospitality, and so on |
-| Finish pairing | Connect the family to finishes, tones, and material suggestions |
-| Signature forms | Describe shapes, proportions, or standout hardware traits |
-| Specification or sizing notes | Add practical detail if available |
-| Enquiry CTA | Give the visitor a clear next step |
+| Shared top header | Must remain unified across routes |
+| Family overview cards | Entire card area should remain clickable |
+| Homepage continuity | Homepage must not be overwritten by handles work |
+| Connected journey | Users should move cleanly from homepage to `/handles`, then into family pages and enquiry paths |
 
-## Navigation principles for the next phase
+## Current Next-Step Decisions Still Open
 
-The site should continue using a **persistent master header** across pages. Navigation must feel like one connected premium website rather than detached screens.
+The key open questions are now more specific than they were in the original roadmap.
 
-The user journey should become more deliberate. A visitor should be able to move from the homepage into `/handles`, from `/handles` into a family page, and from there into enquiry or specification support without confusion.
+| Priority | Decision or next action | Why it matters |
+|---|---|---|
+| 1 | Confirm live deployment after the latest push | Ensures the mobile Technical Sheet fix and favicon have landed cleanly in production |
+| 2 | Decide whether to remain at family-listing depth or introduce internal product-detail pages | This is the main structural product decision still unresolved |
+| 3 | Preserve and use subfamily labels in future imports | Keeps later split-outs such as Closed Grip or Modular Closed Grip straightforward |
+| 4 | Refine enquiry and trade-conversion pathways from product cards and family pages | Improves commercial usefulness without disturbing structure |
+| 5 | Extend finishes and specification guidance | Builds the next editorial-commercial layer around the imported catalogue content |
+| 6 | Import additional products from future supplied PDFs or source documents | This is the most likely next production task from the user |
 
-| Navigation path | Intended journey |
-|---|---|
-| Homepage → Handles | Brand discovery into collection exploration |
-| Handles → Family page | Overview into detailed product interest |
-| Family page → Finishes | Product interest into specification refinement |
-| Family page → Enquiry | Product interest into commercial action |
-| Homepage → Contact / Consultation | General brand traffic into enquiry |
+## Working Rule for Future Product Expansion
 
-## Recommended next major sections after handles
-
-Once `/handles` is functioning as a true collection hub, the rest of the website should be expanded around it.
-
-| Section | Why it should exist |
-|---|---|
-| Finishes | To support material and finish selection tied to handles |
-| Projects / Inspiration | To show application in real interiors and create aspiration |
-| Story / About | To reinforce positioning and brand credibility |
-| Specification Support | To help designers, architects, and trade users |
-| Enquiry / Consultation | To convert interest into contact and project discussions |
-
-## Build discipline for future chats
-
-Any new chat should follow these rules before making changes.
+Any further product additions should follow the now-established pattern rather than inventing a second system.
 
 | Rule | Instruction |
 |---|---|
-| Protect the whole site | Never replace the homepage or collapse the site into a single page build. |
-| Build inside the existing architecture | Extend `/handles` and adjacent sections rather than starting over. |
-| Preserve routing stability | Check that `/` and `/handles` both keep working after edits. |
-| Keep deployment production-ready | All work should remain suitable for the current live Node/Render setup. |
-| Think in whole-site terms | Every new page or section should support the full site journey. |
+| Read first | Review documentation and the current codebase before changing anything |
+| Verify current state | Treat docs as context, but confirm against the actual implementation |
+| Wait for direction | Do not add products until the user specifies which new products or PDFs to process |
+| Preserve structure | Add depth inside the current `/handles` architecture rather than replacing existing pages |
+| Keep EDP voice | Adapt source content into EDP language rather than copying blindly |
+| Keep technical control internal | Use internal Technical Sheet-style experiences rather than external card links |
 
-## Immediate next actions recommended for the next chat
+## Suggested Prompt for a New Chat
 
-The best next working session should focus on the following sequence.
+A new chat can begin from this exact project position using wording like this:
 
-| Step | Recommended action |
-|---|---|
-| 1 | Audit every major CTA on `/handles` and define its destination |
-| 2 | Finalise the six family names and intended hierarchy if any names still need refining |
-| 3 | Create the first family detail page template and route |
-| 4 | Roll that template out across all six family pages |
-| 5 | Improve homepage linking into `/handles` and selected families |
-| 6 | Add the next connected section, most likely **Finishes** or **Enquiry / Consultation** |
+> We are continuing the EDP Handles website as one progressive live website. The homepage at `/` must remain intact and must never be replaced unless I explicitly request that. The codebase is the existing Node/Vite/React site deployed from GitHub and Render. Before making any changes, first read the key repository documents under `docs/`, then inspect the current handles-related code so you understand the present implemented state. Treat the documentation as context, but verify against the actual codebase because some older roadmap items were written before the family-page rollout was completed. After reading everything, stop and wait for my next instruction. Do not edit files, do not generate assets, do not change routes, do not commit, and do not push anything until I explicitly tell you what products from the PDFs to add and how I want them handled. I will provide the GitHub token later when credentialed access is needed.
 
-## Suggested prompt for a new chat
+## Final Continuity Note
 
-A new chat can begin from this exact position using wording like this:
-
-> We are continuing the full EDP Handles website as one progressive live site. The homepage on `/` must stay intact. The `/handles` section already exists and includes the six agreed families. Continue by making the `/handles` section more functional: wire up the CTAs, add family subpages, improve navigation between homepage and handles, and then build the next connected sections such as finishes, projects, and enquiry. Do not replace the homepage or treat `/handles` as a separate site.
-
-## Final continuity note
-
-The key strategic point is that the project has moved beyond a design experiment. It is now a **live full website** with a growing structure. Future work should therefore deepen the existing experience, improve conversion paths, and expand the content architecture in an orderly way.
-
-That means the next successful phase is not a fresh redesign. It is a controlled build-out of the current site into a more complete premium collection website.
+The strategic position is now clear. The project is no longer in a speculative planning phase for `/handles`; it already has a working imported-family layer. Future work should therefore deepen and refine the current architecture in a controlled way, using the existing family pages, imported data pattern, internal Technical Sheet behaviour, and shared navigation system as the baseline for all next steps.

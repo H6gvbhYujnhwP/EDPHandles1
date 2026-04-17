@@ -100,3 +100,11 @@ A further local preview check on `/handles/catalogue` confirmed that the catalog
 ## Family card clickability refinement — Apr 17 2026
 
 The local preview on port 3005 confirms that the six family cards on the `/handles` overview are now rendered as full interactive card links rather than requiring the user to click only the `Collection Overview` label. A direct click on the Bridge family card navigated successfully from `/handles` to `/handles/bridge`, confirming that the full box container now serves as the clickable target while preserving the existing editorial presentation.
+
+## Mobile Technical Sheet and favicon refinement — Apr 17 2026
+
+A further local verification pass confirmed that the internal `Technical Sheet` dialog on the family pages has been adjusted for mobile containment. The dialog content now uses tighter responsive width and padding control, remains vertically scrollable within the viewport, and no longer runs off the page in the same way on smaller screens.
+
+The same refinement pass also introduced a new premium branded favicon aligned with the EDP dark editorial identity. The favicon is now referenced through the client entry HTML and served from the public asset directory as part of the production build.
+
+A local build check completed successfully after both changes. Additional route-level checks confirmed successful responses on `/`, `/handles`, and the favicon asset path, which supports the expectation that the latest push is structurally safe for deployment.

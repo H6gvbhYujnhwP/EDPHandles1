@@ -1,70 +1,57 @@
 # Recommended Next Step for EDP Handles
 
-## Summary judgement
+## Summary Judgement
 
-Based on the three handover documents, the current live site, and the repository structure, the **best next implementation step** is to make the `/handles` section operational by introducing **real family-detail destinations and meaningful CTA routing**, while leaving the homepage at `/` intact apart from light linking improvements.
+Based on the current repository state, the best next implementation step is **not** to build the family routes or wire the primary `/handles` calls to action, because that phase has already been completed. The more accurate next decision is to choose how the project should deepen from the now-working six-family imported listing structure.
 
-This is the safest production move because it strengthens the section already in progress without destabilising the wider site. It also follows the exact sequence described in the handover: first make the handles CTAs lead somewhere meaningful, then deepen the six families into usable collection content, then improve homepage pathways into that new structure.
+The immediate production-safe priority is to confirm the latest deployment after the recent mobile Technical Sheet fix and favicon update. After that, the main strategic decision is whether EDP should stay at **family-listing depth** for the next release or move into **internal product-detail depth**.
 
-## Why this should come next
+## Why This Should Come Next
 
-| Evidence source | What it shows | Practical implication |
+| Evidence source | What it now shows | Practical implication |
 |---|---|---|
-| Handover roadmap | The next priority is to make all key buttons and CTAs on `/handles` meaningful before broader expansion | CTA routing should be the next implementation pass |
-| Cosma staging document | Structure should be frozen before large content import, and one repeatable page pattern should be built first | Build one reusable family-page template and scale it across all six families |
-| Cosma analysis | EDP should become a curated UK-facing distributor gateway, not a direct mirror of Cosma | Family pages should adapt Cosma taxonomy and trade logic into EDP language |
-| Live site review | `/handles` already has the correct six-family framework, but still behaves more like editorial content than a commercial journey | Add real destinations, enquiry paths, and cross-links |
-| Code review | The app already preserves `/` and isolates handles logic in dedicated page components and routes | Extend the existing route family rather than touching homepage architecture |
+| Current repository state | Six family routes already exist and are populated | The old recommendation to create family pages is now obsolete |
+| Current family-page implementation | Imported product listings and internal Technical Sheet modals are active | The product architecture has already moved beyond editorial-only content |
+| Current tracker | Mobile Technical Sheet containment fix and premium favicon work are complete | Deployment confirmation is the immediate housekeeping priority |
+| Existing imported data structure | Subfamily labels are preserved within grouped family datasets | A future split of Closed Grip / Modular Closed Grip is structurally possible |
+| User direction pattern | Further product additions are likely to come from PDFs in future sessions | The next working method must be read-first, then wait for user instruction |
 
-## Recommended implementation package
+## The Real Next Decisions
 
-The next build phase should be executed as one coherent package with four linked outcomes.
+The project is now at a more specific fork in the road.
 
-| Step | Recommended work | Notes |
+| Priority | Decision or next action | Why it matters |
 |---|---|---|
-| 1 | Audit and wire all major `/handles` CTAs | `Explore Families`, `View Catalogue Layout`, each `Collection Overview`, `Request a Consultation`, finish/story/enquiry anchors |
-| 2 | Add a repeatable family-detail page template | Create one consistent page structure for all six families |
-| 3 | Launch six family routes inside the existing architecture | For example, `/handles/bridge`, `/handles/integrated`, `/handles/vertical`, `/handles/appliance`, `/handles/knobs`, `/handles/special-designs` |
-| 4 | Improve homepage pathways into `/handles` | Keep `Home.tsx` intact, but make homepage handles-related CTAs route into `/handles` and selected families more clearly |
+| 1 | Confirm live deployment after the latest push | Verifies that the mobile modal and favicon changes landed cleanly in production |
+| 2 | Decide whether to remain at family-listing depth or add internal product-detail pages | Determines the next structural layer of the catalogue |
+| 3 | Preserve and use subfamily labels more deliberately | Keeps future splits such as Closed Grip and Modular Closed Grip straightforward |
+| 4 | Improve enquiry and trade-conversion pathways from listing pages | Turns browsing into stronger commercial action |
+| 5 | Extend finishes and specification support | Adds the next useful trade-facing content layer |
+| 6 | Import the next approved product batch from user-supplied PDFs or source material | Most likely next content-expansion task |
 
-## What the family template should contain
+## Recommendation by Scenario
 
-Each family page should stay editorial in tone but become commercially useful.
-
-| Section | Purpose |
+| If the user wants... | Best next move |
 |---|---|
-| Hero | Family title, source taxonomy, and positioning statement |
-| Family overview | Explain the design character and intended use |
-| Ideal applications | Kitchens, wardrobes, pantry runs, appliance housing, joinery, hospitality |
-| Finish pairing | Connect the family to available or planned EDP finish selections |
-| Signature forms | Pull types, proportions, grip logic, or integrated profile cues |
-| Trade pathway | Consultation, email enquiry, and future catalogue/spec access |
-| Related family links | Move laterally across the six-family system |
+| Stability first | Confirm production deployment and leave structure unchanged |
+| More products quickly | Import the next approved PDF-led batch into the existing family architecture |
+| Better product depth | Introduce EDP-native product-detail pages beneath the family routes |
+| Cleaner commercial structure | Split out selected subfamilies, starting with Closed Grip if approved |
+| Better specification support | Build stronger finishes and technical guidance around the existing imported families |
 
-## CTA behaviour I recommend
+## What Should Not Be Recommended Anymore
 
-| Current CTA | Recommended destination |
+| Outdated recommendation | Why it is no longer correct |
 |---|---|
-| `Explore Families` | Scroll to the six-family section on `/handles` |
-| `View Catalogue Layout` | Route to `/handles/catalogue` if that route is live and purposeful; otherwise repurpose it to a clearer interim destination |
-| `Collection Overview` under each family | Route to the relevant family detail page |
-| `Request a Consultation` | Route to the strongest current enquiry/contact experience in the full site |
-| `Finishes` section link | Anchor to the finishes section for now, with future upgrade path to `/finishes` |
-| `Story` section link | Anchor to the material/story section on `/handles` or the future About/Heritage page |
+| Build the first family-detail template | That has already been done |
+| Launch the six family routes | They are already live in the codebase |
+| Replace external source actions with internal Technical Sheet popups | That has already been implemented |
+| Unify the top navigation across routes | That has already been completed |
 
-## What should not be done in this phase
+## Recommended Operational Rule for the Next Session
 
-| Do not do this | Reason |
-|---|---|
-| Replace the homepage | It breaks the agreed whole-site continuity |
-| Recast `/handles` as a separate mini-site | It contradicts the preserved route architecture |
-| Import the full Cosma catalogue immediately | The documents recommend controlled curation first |
-| Build many unrelated sections before handles pathways work | It would expand breadth before fixing the current conversion structure |
+The next session should begin by **reading first and waiting**. It should review the repository documents, inspect the current handles-related code, and then stop until the user provides the next product PDFs or structural instruction. No files should be changed until that direction is given.
 
-## Readiness for implementation
+## Recommendation in One Sentence
 
-The repository is public, the route structure is already compatible with this next phase, and no GitHub token is required yet for inspection. A token will become useful when you want me to clone, edit, commit, and push the production-safe changes directly.
-
-## Recommendation in one sentence
-
-The next move should be to **turn `/handles` from a strong editorial overview into a working collection hub by wiring all CTAs, creating six family-detail routes, and lightly strengthening homepage pathways into that structure without altering `/`.**
+The next move should be to **confirm the latest deployment, then choose whether the EDP Handles site should deepen through more imported product batches inside the current family pages or through a new internal product-detail layer — but any new session should read everything first and wait for explicit user instruction before changing anything.**
