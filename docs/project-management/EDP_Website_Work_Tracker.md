@@ -63,6 +63,8 @@ The current phase is to turn `/handles` from a strong editorial overview into a 
 | [x] | Replace the external Bridge source-link behaviour with an internal Technical Sheet popup |
 | [x] | Roll the same import-and-render pattern out to Integrated, Vertical, Appliance, Knobs, and Special families locally |
 | [x] | Extend the internal Technical Sheet popup pattern across the imported family-page structure locally |
+| [x] | Fix the internal Technical Sheet modal so it remains contained and readable on mobile layouts |
+| [x] | Add a premium branded favicon aligned with the dark editorial EDP identity |
 | [ ] | Decide whether to introduce dedicated product-detail views inside EDP or remain at family-listing depth for the next release |
 | [ ] | Push the completed multi-family rollout to `main` |
 | [ ] | Confirm the live deployment after the multi-family rollout reaches production |
@@ -71,7 +73,7 @@ The current phase is to turn `/handles` from a strong editorial overview into a 
 
 | Priority | Planned action | Intent |
 |---|---|---|
-| 1 | Push and monitor the completed multi-family rollout | Move the verified local update into GitHub and production review |
+| 1 | Confirm the latest push and monitor production deployment | Move the newly verified mobile modal and favicon update into live review |
 | 2 | Preserve subfamily labels in the imported data | Keep future split points ready for Closed Grip and Modular Closed Grip |
 | 3 | Decide on EDP-native product detail depth | Choose between family-listing only or internal product pages |
 | 4 | Refine enquiry and trade-conversion pathways from product cards | Turn browsing into stronger commercial next steps |

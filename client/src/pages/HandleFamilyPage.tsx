@@ -455,68 +455,68 @@ export default function HandleFamilyPage() {
       </main>
 
       <Dialog open={Boolean(selectedProduct)} onOpenChange={(open) => !open && setSelectedProduct(null)}>
-        <DialogContent className="max-h-[90vh] overflow-y-auto border-white/10 bg-[#11100f] text-stone-100 sm:max-w-3xl">
+        <DialogContent className="w-full max-w-[95vw] max-h-[90vh] overflow-y-auto overflow-x-hidden border-white/10 bg-[#11100f] p-4 text-stone-100 sm:max-w-3xl sm:p-6">
           {selectedProduct && selectedProductMeasurements && (
-            <div className="space-y-8">
-              <DialogHeader className="space-y-3 text-left">
+            <div className="space-y-6 sm:space-y-8">
+              <DialogHeader className="space-y-3 pr-8 text-left sm:pr-10">
                 <p className="text-xs uppercase tracking-[0.26em] text-stone-500">Technical Sheet</p>
-                <DialogTitle className="font-display text-4xl text-stone-50">
+                <DialogTitle className="font-display break-words text-3xl leading-tight text-stone-50 sm:text-4xl">
                   {family.title} — {selectedProduct.code}
                 </DialogTitle>
-                <DialogDescription className="text-base leading-7 text-stone-400">
+                <DialogDescription className="break-words text-sm leading-6 text-stone-400 sm:text-base sm:leading-7">
                   Internal EDP technical view for {selectedProduct.sourceCategory.toLowerCase()} with the current imported sizing and specification information presented inside the site.
                 </DialogDescription>
               </DialogHeader>
 
               <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                <div className="rounded-[1.3rem] border border-white/10 bg-white/[0.03] p-5">
+                <div className="rounded-[1.3rem] border border-white/10 bg-white/[0.03] p-4 sm:p-5">
                   <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Source Group</p>
-                  <p className="text-sm leading-6 text-stone-300">{selectedProduct.sourceCategory}</p>
+                  <p className="break-words text-sm leading-6 text-stone-300">{selectedProduct.sourceCategory}</p>
                 </div>
-                <div className="rounded-[1.3rem] border border-white/10 bg-white/[0.03] p-5">
+                <div className="rounded-[1.3rem] border border-white/10 bg-white/[0.03] p-4 sm:p-5">
                   <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Material</p>
-                  <p className="text-sm leading-6 text-stone-300">{selectedProduct.material || "Available on request"}</p>
+                  <p className="break-words text-sm leading-6 text-stone-300">{selectedProduct.material || "Available on request"}</p>
                 </div>
-                <div className="rounded-[1.3rem] border border-white/10 bg-white/[0.03] p-5">
+                <div className="rounded-[1.3rem] border border-white/10 bg-white/[0.03] p-4 sm:p-5">
                   <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Finish Options</p>
-                  <p className="text-sm leading-6 text-stone-300">
+                  <p className="break-words text-sm leading-6 text-stone-300">
                     {selectedProductMeasurements.finishes.length > 0
                       ? selectedProductMeasurements.finishes.join(", ")
                       : "Available on request"}
                   </p>
                 </div>
-                <div className="rounded-[1.3rem] border border-white/10 bg-white/[0.03] p-5">
+                <div className="rounded-[1.3rem] border border-white/10 bg-white/[0.03] p-4 sm:p-5">
                   <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Technical Variants</p>
-                  <p className="text-sm leading-6 text-stone-300">{selectedProduct.technicalRows.length || 1} rows imported</p>
+                  <p className="break-words text-sm leading-6 text-stone-300">{selectedProduct.technicalRows.length || 1} rows imported</p>
                 </div>
               </div>
 
               <div className="grid gap-4 md:grid-cols-2">
-                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6">
+                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4 sm:p-6">
                   <p className="mb-4 text-xs uppercase tracking-[0.24em] text-stone-500">Measurements</p>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
                       <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Widths</p>
-                      <p className="text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.widths)}</p>
+                      <p className="break-words text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.widths)}</p>
                     </div>
                     <div>
                       <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Centres</p>
-                      <p className="text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.centres)}</p>
+                      <p className="break-words text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.centres)}</p>
                     </div>
                     <div>
                       <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Heights</p>
-                      <p className="text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.heights)}</p>
+                      <p className="break-words text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.heights)}</p>
                     </div>
                     <div>
                       <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Sections</p>
-                      <p className="text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.sections)}</p>
+                      <p className="break-words text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.sections)}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6">
+                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4 sm:p-6">
                   <p className="mb-4 text-xs uppercase tracking-[0.24em] text-stone-500">Specification Notes</p>
-                  <div className="space-y-3 text-sm leading-6 text-stone-300">
+                  <div className="space-y-3 break-words text-sm leading-6 text-stone-300">
                     <p>Product code: {selectedProduct.code}</p>
                     <p>
                       Source codes: {selectedProductMeasurements.codes.length > 0 ? selectedProductMeasurements.codes.join(", ") : selectedProduct.code}
@@ -530,14 +530,14 @@ export default function HandleFamilyPage() {
               </div>
 
               {selectedProduct.technicalRows.length > 0 && (
-                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6">
+                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4 sm:p-6">
                   <p className="mb-4 text-xs uppercase tracking-[0.24em] text-stone-500">Imported Technical Rows</p>
-                  <div className="overflow-x-auto">
-                    <table className="min-w-full border-separate border-spacing-y-2 text-left text-sm text-stone-300">
+                  <div className="overflow-x-auto pb-1">
+                    <table className="min-w-[640px] border-separate border-spacing-y-2 text-left text-sm text-stone-300 sm:min-w-full">
                       <thead>
                         <tr>
                           {Object.keys(selectedProduct.technicalRows[0]).map((header) => (
-                            <th key={header} className="px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">
+                            <th key={header} className="px-3 py-2 text-[11px] uppercase tracking-[0.18em] text-stone-500 sm:px-4 sm:tracking-[0.22em]">
                               {header}
                             </th>
                           ))}
@@ -547,7 +547,7 @@ export default function HandleFamilyPage() {
                         {selectedProduct.technicalRows.map((row, index) => (
                           <tr key={`${selectedProduct.code}-${index}`} className="bg-white/[0.03] even:bg-white/[0.06]">
                             {Object.keys(selectedProduct.technicalRows[0]).map((header) => (
-                              <td key={header} className="px-4 py-3 align-top leading-6 text-stone-300">
+                              <td key={header} className="px-3 py-3 align-top break-words whitespace-normal leading-6 text-stone-300 sm:px-4">
                                 {row[header] || "—"}
                               </td>
                             ))}
