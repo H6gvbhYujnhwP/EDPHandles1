@@ -13,23 +13,42 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { cosmaBridgeProducts, type ImportedHandleProduct } from "@/lib/cosmaBridgeProducts";
+import { cosmaFamilyProducts, type ImportedHandleProduct } from "@/lib/cosmaFamilyProducts";
 import { handleFamilies } from "@/lib/handleFamilies";
 
 function getProductImage(product: ImportedHandleProduct) {
   return product.primaryImage || product.detailImages[0] || product.listingImages[0] || "";
 }
 
+function getUniqueValues(product: ImportedHandleProduct, key: string) {
+  return Array.from(
+    new Set(product.technicalRows.map((row) => row[key]).filter((value): value is string => Boolean(value)))
+  );
+}
+
+function getFinishOptions(product: ImportedHandleProduct) {
+  const finishes = [
+    ...getUniqueValues(product, "Finish"),
+    ...getUniqueValues(product, "Finishes"),
+    ...getUniqueValues(product, "Colour"),
+    ...getUniqueValues(product, "Color"),
+  ];
+
+  return Array.from(new Set(finishes));
+}
+
+function formatMeasurementList(values: string[], unit = "mm") {
+  if (values.length === 0) {
+    return "Available on request";
+  }
+
+  return `${values.join(", ")} ${unit}`;
+}
+
 function getProductSummary(product: ImportedHandleProduct) {
-  const widths = product.technicalRows
-    .map((row) => row["Width mm"])
-    .filter((value): value is string => Boolean(value));
-  const holeDistances = product.technicalRows
-    .map((row) => row["Holes distance mm"])
-    .filter((value): value is string => Boolean(value));
-  const sections = product.technicalRows
-    .map((row) => row["Section mm"])
-    .filter((value): value is string => Boolean(value));
+  const widths = getUniqueValues(product, "Width mm");
+  const holeDistances = getUniqueValues(product, "Holes distance mm");
+  const sections = getUniqueValues(product, "Section mm");
 
   const parts = [];
 
@@ -56,29 +75,35 @@ function getEnquiryHref(familyTitle: string, code: string) {
   return `mailto:hello@edphandles.com?subject=${encodeURIComponent(`${familyTitle} enquiry — ${code}`)}`;
 }
 
-function getUniqueValues(product: ImportedHandleProduct, key: string) {
-  return Array.from(
-    new Set(product.technicalRows.map((row) => row[key]).filter((value): value is string => Boolean(value)))
-  );
+function getFamilyListingIntro(slug: string) {
+  switch (slug) {
+    case "bridge":
+      return "This page now moves straight from editorial family framing into a real imported Bridge catalogue view. The products below are grouped from the public Cosma Bridge and Modular Bridge source structure, then presented inside the EDP design language.";
+    case "integrated":
+      return "This page now opens directly into a real imported Integrated listing, combining Closed Grip, Modular Closed Grip, Integrated, and Integrated Modular products within the EDP structure while preserving those source categories for future family separation.";
+    case "vertical":
+      return "This page now opens directly into a real imported Vertical listing, combining Vertical and Vertical Integrated products into a cleaner EDP-led specification route for tall cabinetry and alignment-led projects.";
+    case "appliance":
+      return "This page now opens directly into a real imported Appliance listing, bringing the technical appliance-handle range into the EDP journey without sending the user away from the site.";
+    case "knobs":
+      return "This page now opens directly into a real imported Knobs listing, giving smaller-format hardware an immediate image-led view while staying within the premium editorial EDP language.";
+    case "special-designs":
+      return "This page now opens directly into a real imported Special listing, allowing more distinctive forms to be reviewed visually and technically without breaking the curated EDP experience.";
+    default:
+      return "This family page now moves straight from editorial framing into a real imported product listing presented inside the EDP design language.";
+  }
 }
 
-function formatMeasurementList(values: string[], unit = "mm") {
-  if (values.length === 0) {
-    return "Available on request";
+function getFamilyImmediateViewText(familySlug: string, importedCount: number) {
+  if (importedCount === 0) {
+    return "This family page is ready for deeper listing integration in the next pass.";
   }
 
-  return `${values.join(", ")} ${unit}`;
-}
+  if (familySlug === "integrated") {
+    return `${importedCount} imported product listings are now visible directly on this page, with Closed Grip families still grouped here for now but ready to split later.`;
+  }
 
-function getFinishOptions(product: ImportedHandleProduct) {
-  const finishes = [
-    ...getUniqueValues(product, "Finish"),
-    ...getUniqueValues(product, "Finishes"),
-    ...getUniqueValues(product, "Colour"),
-    ...getUniqueValues(product, "Color"),
-  ];
-
-  return Array.from(new Set(finishes));
+  return `${importedCount} imported product listings are now visible directly on this page.`;
 }
 
 export default function HandleFamilyPage() {
@@ -92,7 +117,7 @@ export default function HandleFamilyPage() {
   }
 
   const relatedFamilies = handleFamilies.filter((item) => item.slug !== family.slug);
-  const importedProducts = family.slug === "bridge" ? cosmaBridgeProducts : [];
+  const importedProducts = cosmaFamilyProducts[family.slug] || [];
   const groupedCounts = importedProducts.reduce<Record<string, number>>((acc, product) => {
     acc[product.sourceCategory] = (acc[product.sourceCategory] || 0) + 1;
     return acc;
@@ -202,11 +227,7 @@ export default function HandleFamilyPage() {
                   </div>
                   <div>
                     <p className="mb-2 text-xs uppercase tracking-[0.28em] text-stone-500">Immediate View</p>
-                    <p>
-                      {importedProducts.length > 0
-                        ? `${importedProducts.length} imported product listings are now visible directly on this page.`
-                        : "This family page is ready for deeper listing integration in the next pass."}
-                    </p>
+                    <p>{getFamilyImmediateViewText(family.slug, importedProducts.length)}</p>
                   </div>
                 </div>
               </div>
@@ -221,11 +242,9 @@ export default function HandleFamilyPage() {
                 <div className="space-y-4">
                   <p className="label-kicker">Live Family Listing</p>
                   <h2 className="font-display text-4xl font-medium leading-tight text-stone-100 md:text-5xl">
-                    View the full Bridge listing immediately.
+                    View the full {family.title.replace("Handles", "").replace("& Small Hardware", "collection").trim()} listing immediately.
                   </h2>
-                  <p className="max-w-2xl text-base leading-8 text-stone-400">
-                    This pilot page now moves straight from editorial family framing into a real imported Bridge catalogue view. The products below are grouped from the public Cosma Bridge and Modular Bridge source structure, then presented inside the EDP design language.
-                  </p>
+                  <p className="max-w-2xl text-base leading-8 text-stone-400">{getFamilyListingIntro(family.slug)}</p>
                 </div>
 
                 <div className="flex flex-wrap gap-3 lg:justify-end">
@@ -245,7 +264,7 @@ export default function HandleFamilyPage() {
                   const image = getProductImage(product);
                   return (
                     <article
-                      key={product.productUrl || product.code}
+                      key={`${family.slug}-${product.productId || product.code}`}
                       className="group overflow-hidden rounded-[1.8rem] border border-white/10 bg-white/[0.03] transition duration-500 hover:-translate-y-1 hover:border-[rgba(214,192,154,0.32)]"
                     >
                       <div className="relative aspect-[1.12] overflow-hidden border-b border-white/10 bg-[#151311]">
@@ -287,7 +306,9 @@ export default function HandleFamilyPage() {
                           </div>
                           <div className="rounded-[1.15rem] border border-white/10 bg-black/20 p-4">
                             <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Formats shown</p>
-                            <p className="text-sm leading-6 text-stone-300">{product.technicalRows.length || product.detailImages.length} variants/images available</p>
+                            <p className="text-sm leading-6 text-stone-300">
+                              {product.technicalRows.length || product.detailImages.length} variants/images available
+                            </p>
                           </div>
                         </div>
 
@@ -449,7 +470,7 @@ export default function HandleFamilyPage() {
                     href="/handles/catalogue#trade-support"
                     className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-stone-100 transition duration-300 hover:border-[rgba(214,192,154,0.42)] hover:bg-white/10"
                   >
-                    Open Trade Support
+                    Review Trade Support
                   </a>
                 </div>
               </div>
@@ -459,137 +480,124 @@ export default function HandleFamilyPage() {
       </main>
 
       <Dialog open={Boolean(selectedProduct)} onOpenChange={(open) => !open && setSelectedProduct(null)}>
-        <DialogContent className="max-h-[90vh] overflow-y-auto border border-[rgba(214,192,154,0.18)] bg-[#0d0b0a] p-0 text-stone-100 shadow-[0_25px_90px_rgba(0,0,0,0.45)] sm:max-w-3xl">
+        <DialogContent className="max-h-[90vh] overflow-y-auto border-white/10 bg-[#11100f] text-stone-100 sm:max-w-3xl">
           {selectedProduct && selectedProductMeasurements && (
-            <div className="overflow-hidden rounded-[1.4rem]">
-              <div className="border-b border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01))] px-8 py-7">
-                <DialogHeader className="space-y-3 text-left">
-                  <p className="label-kicker">Technical Sheet</p>
-                  <DialogTitle className="font-display text-4xl font-medium tracking-tight text-stone-50">
-                    {selectedProduct.code}
-                  </DialogTitle>
-                  <DialogDescription className="max-w-2xl text-base leading-7 text-stone-300">
-                    Internal technical view for {selectedProduct.sourceCategory.toLowerCase()} within the {family.title.toLowerCase()} collection. This keeps the specification journey inside EDP while exposing the imported dimensions and range detail clearly.
-                  </DialogDescription>
-                </DialogHeader>
+            <div className="space-y-8">
+              <DialogHeader className="space-y-3 text-left">
+                <p className="text-xs uppercase tracking-[0.26em] text-stone-500">Technical Sheet</p>
+                <DialogTitle className="font-display text-4xl text-stone-50">
+                  {family.title} — {selectedProduct.code}
+                </DialogTitle>
+                <DialogDescription className="text-base leading-7 text-stone-400">
+                  Internal EDP technical view for {selectedProduct.sourceCategory.toLowerCase()} with the current imported sizing and specification information presented inside the site.
+                </DialogDescription>
+              </DialogHeader>
+
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                <div className="rounded-[1.3rem] border border-white/10 bg-white/[0.03] p-5">
+                  <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Source Group</p>
+                  <p className="text-sm leading-6 text-stone-300">{selectedProduct.sourceCategory}</p>
+                </div>
+                <div className="rounded-[1.3rem] border border-white/10 bg-white/[0.03] p-5">
+                  <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Material</p>
+                  <p className="text-sm leading-6 text-stone-300">{selectedProduct.material || "Available on request"}</p>
+                </div>
+                <div className="rounded-[1.3rem] border border-white/10 bg-white/[0.03] p-5">
+                  <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Finish Options</p>
+                  <p className="text-sm leading-6 text-stone-300">
+                    {selectedProductMeasurements.finishes.length > 0
+                      ? selectedProductMeasurements.finishes.join(", ")
+                      : "Available on request"}
+                  </p>
+                </div>
+                <div className="rounded-[1.3rem] border border-white/10 bg-white/[0.03] p-5">
+                  <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Technical Variants</p>
+                  <p className="text-sm leading-6 text-stone-300">{selectedProduct.technicalRows.length || 1} rows imported</p>
+                </div>
               </div>
 
-              <div className="grid gap-8 px-8 py-8 lg:grid-cols-[0.95fr_1.05fr]">
-                <div className="space-y-5">
-                  <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-black/20">
-                    {getProductImage(selectedProduct) ? (
-                      <img
-                        src={getProductImage(selectedProduct)}
-                        alt={`${selectedProduct.code} technical view`}
-                        className="h-[320px] w-full object-cover"
-                      />
-                    ) : (
-                      <div className="flex h-[320px] items-center justify-center text-sm uppercase tracking-[0.22em] text-stone-500">
-                        Image pending
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="rounded-[1.4rem] border border-white/10 bg-white/[0.03] p-5">
-                    <p className="mb-2 text-xs uppercase tracking-[0.24em] text-stone-500">Specification Summary</p>
-                    <p className="leading-7 text-stone-300">{getProductSummary(selectedProduct)}</p>
-                  </div>
-                </div>
-
-                <div className="space-y-5">
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6">
+                  <p className="mb-4 text-xs uppercase tracking-[0.24em] text-stone-500">Measurements</p>
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="rounded-[1.35rem] border border-white/10 bg-white/[0.03] p-5">
-                      <p className="mb-2 text-xs uppercase tracking-[0.24em] text-stone-500">Subfamily</p>
-                      <p className="text-sm leading-7 text-stone-300">{selectedProduct.sourceCategory}</p>
+                    <div>
+                      <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Widths</p>
+                      <p className="text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.widths)}</p>
                     </div>
-                    <div className="rounded-[1.35rem] border border-white/10 bg-white/[0.03] p-5">
-                      <p className="mb-2 text-xs uppercase tracking-[0.24em] text-stone-500">Material</p>
-                      <p className="text-sm leading-7 text-stone-300">{selectedProduct.material || "Available on request"}</p>
+                    <div>
+                      <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Centres</p>
+                      <p className="text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.centres)}</p>
                     </div>
-                    <div className="rounded-[1.35rem] border border-white/10 bg-white/[0.03] p-5">
-                      <p className="mb-2 text-xs uppercase tracking-[0.24em] text-stone-500">Codes shown</p>
-                      <p className="text-sm leading-7 text-stone-300">{selectedProductMeasurements.codes.join(", ") || selectedProduct.code}</p>
+                    <div>
+                      <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Heights</p>
+                      <p className="text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.heights)}</p>
                     </div>
-                    <div className="rounded-[1.35rem] border border-white/10 bg-white/[0.03] p-5">
-                      <p className="mb-2 text-xs uppercase tracking-[0.24em] text-stone-500">Finish / colour</p>
-                      <p className="text-sm leading-7 text-stone-300">
-                        {selectedProductMeasurements.finishes.length > 0
-                          ? selectedProductMeasurements.finishes.join(", ")
-                          : "Finish options available on request"}
-                      </p>
+                    <div>
+                      <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Sections</p>
+                      <p className="text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.sections)}</p>
                     </div>
-                  </div>
-
-                  <div className="rounded-[1.5rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0.015))] p-6">
-                    <div className="mb-5 flex items-center gap-3">
-                      <Ruler className="h-5 w-5 text-[rgba(201,166,108,0.92)]" />
-                      <p className="text-xs uppercase tracking-[0.28em] text-stone-400">Technical Measurements</p>
-                    </div>
-
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div className="rounded-[1.15rem] border border-white/10 bg-black/20 p-4">
-                        <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Widths</p>
-                        <p className="text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.widths)}</p>
-                      </div>
-                      <div className="rounded-[1.15rem] border border-white/10 bg-black/20 p-4">
-                        <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Centres</p>
-                        <p className="text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.centres)}</p>
-                      </div>
-                      <div className="rounded-[1.15rem] border border-white/10 bg-black/20 p-4">
-                        <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Heights</p>
-                        <p className="text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.heights)}</p>
-                      </div>
-                      <div className="rounded-[1.15rem] border border-white/10 bg-black/20 p-4">
-                        <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">Section</p>
-                        <p className="text-sm leading-6 text-stone-300">{formatMeasurementList(selectedProductMeasurements.sections)}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {selectedProduct.technicalRows.length > 0 && (
-                    <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6">
-                      <p className="mb-4 text-xs uppercase tracking-[0.24em] text-stone-500">Variant Breakdown</p>
-                      <div className="overflow-hidden rounded-[1rem] border border-white/10">
-                        <div className="grid grid-cols-4 gap-px bg-white/10 text-[11px] uppercase tracking-[0.18em] text-stone-300">
-                          <div className="bg-[#161210] px-3 py-3">Code</div>
-                          <div className="bg-[#161210] px-3 py-3">Width</div>
-                          <div className="bg-[#161210] px-3 py-3">Centres</div>
-                          <div className="bg-[#161210] px-3 py-3">Height / Section</div>
-                        </div>
-                        {selectedProduct.technicalRows.map((row, index) => (
-                          <div
-                            key={`${selectedProduct.code}-${index}`}
-                            className={`grid grid-cols-4 gap-px border-t border-white/10 text-sm text-stone-300 ${index % 2 === 0 ? "bg-[#120f0e]" : "bg-[#171311]"}`}
-                          >
-                            <div className="px-3 py-3">{row["Code"] || selectedProduct.code}</div>
-                            <div className="px-3 py-3">{row["Width mm"] ? `${row["Width mm"]} mm` : "—"}</div>
-                            <div className="px-3 py-3">{row["Holes distance mm"] ? `${row["Holes distance mm"]} mm` : "—"}</div>
-                            <div className="px-3 py-3">
-                              {row["Height mm"] ? `${row["Height mm"]} mm` : "—"}
-                              {row["Section mm"] ? ` / ${row["Section mm"]} mm` : ""}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  <div className="flex flex-col gap-3 sm:flex-row">
-                    <a
-                      href={getEnquiryHref(family.title, selectedProduct.code)}
-                      className="inline-flex flex-1 items-center justify-center rounded-full bg-[rgba(201,166,108,0.92)] px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-950 transition duration-300 hover:bg-[rgba(220,187,129,0.98)]"
-                    >
-                      Enquire About This Handle
-                    </a>
-                    <button
-                      type="button"
-                      onClick={() => setSelectedProduct(null)}
-                      className="inline-flex flex-1 items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-100 transition duration-300 hover:border-[rgba(214,192,154,0.42)] hover:bg-white/10"
-                    >
-                      Close Technical Sheet
-                    </button>
                   </div>
                 </div>
+
+                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6">
+                  <p className="mb-4 text-xs uppercase tracking-[0.24em] text-stone-500">Specification Notes</p>
+                  <div className="space-y-3 text-sm leading-6 text-stone-300">
+                    <p>Product code: {selectedProduct.code}</p>
+                    <p>
+                      Source codes: {selectedProductMeasurements.codes.length > 0 ? selectedProductMeasurements.codes.join(", ") : selectedProduct.code}
+                    </p>
+                    <p>
+                      Image references available: {selectedProduct.detailImages.length || selectedProduct.listingImages.length}
+                    </p>
+                    <p>For project-specific fixing, finish, and availability guidance, use the enquiry route below.</p>
+                  </div>
+                </div>
+              </div>
+
+              {selectedProduct.technicalRows.length > 0 && (
+                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6">
+                  <p className="mb-4 text-xs uppercase tracking-[0.24em] text-stone-500">Imported Technical Rows</p>
+                  <div className="overflow-x-auto">
+                    <table className="min-w-full border-separate border-spacing-y-2 text-left text-sm text-stone-300">
+                      <thead>
+                        <tr>
+                          {Object.keys(selectedProduct.technicalRows[0]).map((header) => (
+                            <th key={header} className="px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">
+                              {header}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {selectedProduct.technicalRows.map((row, index) => (
+                          <tr key={`${selectedProduct.code}-${index}`} className="bg-white/[0.03] even:bg-white/[0.06]">
+                            {Object.keys(selectedProduct.technicalRows[0]).map((header) => (
+                              <td key={header} className="px-4 py-3 align-top leading-6 text-stone-300">
+                                {row[header] || "—"}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              <div className="flex flex-col gap-4 border-t border-white/10 pt-2 sm:flex-row">
+                <a
+                  href={getEnquiryHref(family.title, selectedProduct.code)}
+                  className="inline-flex items-center justify-center rounded-full bg-[rgba(201,166,108,0.92)] px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-stone-950 transition duration-300 hover:bg-[rgba(220,187,129,0.98)]"
+                >
+                  Enquire About {selectedProduct.code}
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setSelectedProduct(null)}
+                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-stone-100 transition duration-300 hover:border-[rgba(214,192,154,0.42)] hover:bg-white/10"
+                >
+                  Close Technical Sheet
+                </button>
               </div>
             </div>
           )}

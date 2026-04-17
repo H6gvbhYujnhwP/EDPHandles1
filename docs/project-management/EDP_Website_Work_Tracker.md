@@ -39,11 +39,14 @@ The governing principle remains unchanged: **EDP Handles is one progressive live
 | [x] | Live site and repository routing reviewed to confirm homepage and `/handles` separation |
 | [x] | Bridge family pilot import created from the public Cosma source structure |
 | [x] | Bridge family page updated to show a real imported image-led product listing |
-| [x] | Homepage, `/handles`, and `/handles/bridge` verified locally after the Bridge pilot integration |
+| [x] | Bridge family Technical Sheet interaction converted from an external source link into an internal popup |
+| [x] | Multi-family import workflow created for Integrated, Vertical, Appliance, Knobs, and Special |
+| [x] | Imported listing and internal Technical Sheet pattern extended across the remaining family pages locally |
+| [x] | Homepage, `/handles`, `/handles/bridge`, `/handles/integrated`, and `/handles/appliance` verified locally after the rollout |
 
 ## Current Phase
 
-The current phase is to turn `/handles` from a strong editorial overview into a working collection hub. The first implementation pass for that phase is now in place: major CTAs have been routed more meaningfully, family-detail routes have been introduced, homepage pathways into the handles architecture have been tightened without disturbing the wider site, and the **Bridge family now acts as the first imported real listing page**.
+The current phase is to turn `/handles` from a strong editorial overview into a working collection hub. That phase is now materially advanced: major CTAs have been routed more meaningfully, family-detail routes have been introduced, homepage pathways into the handles architecture have been tightened without disturbing the wider site, and the family-page pattern now supports imported listing views with internal Technical Sheet popups across the collection structure.
 
 ## Active Task Checklist
 
@@ -57,15 +60,18 @@ The current phase is to turn `/handles` from a strong editorial overview into a 
 | [x] | Verify `/` and `/handles` both still work after implementation |
 | [x] | Build Bridge-first import workflow and generate a local structured dataset from public Cosma source content |
 | [x] | Render the Bridge family as a real image-led listing page with product cards, source grouping, and enquiry paths |
-| [ ] | Roll the same import-and-render pattern out to Integrated, Vertical, Appliance, Knobs, and Special families |
+| [x] | Replace the external Bridge source-link behaviour with an internal Technical Sheet popup |
+| [x] | Roll the same import-and-render pattern out to Integrated, Vertical, Appliance, Knobs, and Special families locally |
+| [x] | Extend the internal Technical Sheet popup pattern across the imported family-page structure locally |
 | [ ] | Decide whether to introduce dedicated product-detail views inside EDP or remain at family-listing depth for the next release |
-| [ ] | Commit and push the production-safe Bridge pilot update to `main` |
+| [ ] | Push the completed multi-family rollout to `main` |
+| [ ] | Confirm the live deployment after the multi-family rollout reaches production |
 
 ## Next Planned Build Order
 
 | Priority | Planned action | Intent |
 |---|---|---|
-| 1 | Roll out imported listing pages to Integrated, Vertical, Appliance, Knobs, and Special | Extend the Bridge pilot pattern across the remaining families |
+| 1 | Push and monitor the completed multi-family rollout | Move the verified local update into GitHub and production review |
 | 2 | Preserve subfamily labels in the imported data | Keep future split points ready for Closed Grip and Modular Closed Grip |
 | 3 | Decide on EDP-native product detail depth | Choose between family-listing only or internal product pages |
 | 4 | Refine enquiry and trade-conversion pathways from product cards | Turn browsing into stronger commercial next steps |
