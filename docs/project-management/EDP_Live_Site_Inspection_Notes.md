@@ -96,3 +96,7 @@ The local preview on `/handles` now shows the same top navigation as the homepag
 The local preview on `/handles/bridge` also shows the same shared top navigation, confirming that the master header now persists on deeper family-detail routes rather than switching to a route-owned section header.
 
 A further local preview check on `/handles/catalogue` confirmed that the catalogue route now uses the same master navigation as the homepage, `/handles`, and the family pages. This resolves the previous feeling that separate microsite-style menus were appearing as users moved between routes.
+
+## Family card clickability refinement — Apr 17 2026
+
+The local preview on port 3005 confirms that the six family cards on the `/handles` overview are now rendered as full interactive card links rather than requiring the user to click only the `Collection Overview` label. A direct click on the Bridge family card navigated successfully from `/handles` to `/handles/bridge`, confirming that the full box container now serves as the clickable target while preserving the existing editorial presentation.

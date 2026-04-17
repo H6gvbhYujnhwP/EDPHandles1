@@ -96,9 +96,10 @@ export default function HandlesShowcase() {
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {handleFamilies.map((family, index) => (
-              <article
+              <a
                 key={family.slug}
-                className="group editorial-panel overflow-hidden rounded-[1.7rem] transition duration-500 hover:-translate-y-1 hover:border-[rgba(214,192,154,0.32)]"
+                href={`/handles/${family.slug}`}
+                className="group editorial-panel block overflow-hidden rounded-[1.7rem] transition duration-500 hover:-translate-y-1 hover:border-[rgba(214,192,154,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(201,166,108,0.72)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0908]"
               >
                 <div className="relative h-64 overflow-hidden border-b border-white/10">
                   <img
@@ -118,15 +119,12 @@ export default function HandlesShowcase() {
                 </div>
                 <div className="space-y-5 p-6">
                   <p className="leading-7 text-stone-400">{family.summary}</p>
-                  <a
-                    href={`/handles/${family.slug}`}
-                    className="inline-flex items-center gap-3 border-t border-white/10 pt-4 text-xs uppercase tracking-[0.24em] text-[rgba(201,166,108,0.88)] transition duration-300 hover:text-stone-50"
-                  >
+                  <div className="inline-flex items-center gap-3 border-t border-white/10 pt-4 text-xs uppercase tracking-[0.24em] text-[rgba(201,166,108,0.88)] transition duration-300 group-hover:text-stone-50">
                     Collection Overview
                     <ArrowRight className="h-4 w-4" />
-                  </a>
+                  </div>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         </div>
