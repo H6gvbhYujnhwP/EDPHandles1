@@ -9,6 +9,7 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import HandleFamilyPage from "./pages/HandleFamilyPage";
 import Home from "./pages/Home";
 import Handles from "./pages/Handles";
 import HandlesShowcase from "./pages/HandlesShowcase";
@@ -17,8 +18,9 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/handles" component={HandlesShowcase} />
       <Route path="/handles/catalogue" component={Handles} />
+      <Route path="/handles/:slug" component={HandleFamilyPage} />
+      <Route path="/handles" component={HandlesShowcase} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

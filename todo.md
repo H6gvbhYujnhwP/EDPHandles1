@@ -1,11 +1,37 @@
-- [ ] Preserve the existing website homepage instead of replacing it.
-- [ ] Move the new EDP Handles design to the `/handles` route.
-- [ ] Inspect current routing and restore separation between the homepage and `/handles`.
-- [ ] Verify both `/` and `/handles` render correctly after the routing fix.
-- [ ] Keep the homepage and all existing site sections intact during all further `/handles` work.
-- [ ] Limit upcoming development changes to the `/handles` section only.
-- [ ] Ensure no future update replaces the homepage, navigation structure, or other existing pages.
-- [ ] Map the six agreed handle families into the current `/handles` page structure.
-- [ ] Replace or extend the current `/handles` family section so all six agreed families are visible.
-- [ ] Preserve the homepage and all non-`/handles` routes while integrating the six families.
-- [ ] Validate both `/handles` content and wider site routing after the integration.
+# EDP Handles Website TODO
+
+This repository tracks the **full EDP Handles website** as one progressive live site. The homepage at `/` must remain intact unless explicitly redesigned. The current delivery focus is the `/handles` section and its connected collection journeys.
+
+## Working Documents
+
+| Document | Location |
+|---|---|
+| Website roadmap and handover | `docs/handover/EDP_Handles_Website_Roadmap_and_Handover.md` |
+| Cosma staging pathway | `docs/handover/Staged_Pathway_for_Bringing_Cosma_Content_into_the_EDP_Handles_Website.md` |
+| Cosma source analysis | `docs/handover/Cosma_Website_Analysis_for_EDP_Handles.md` |
+| Live-site inspection notes | `docs/project-management/EDP_Live_Site_Inspection_Notes.md` |
+| Current next-step recommendation | `docs/project-management/EDP_Next_Step_Recommendation.md` |
+| Master work tracker | `docs/project-management/EDP_Website_Work_Tracker.md` |
+
+## Completed Foundations
+
+| Status | Item |
+|---|---|
+| [x] | Preserve the existing homepage instead of replacing it |
+| [x] | Move the new editorial handles direction to `/handles` |
+| [x] | Restore separation between the homepage and `/handles` |
+| [x] | Verify both `/` and `/handles` render correctly after the routing fix |
+| [x] | Keep the homepage and all existing site sections intact during further `/handles` work |
+| [x] | Integrate the six agreed handle families into the `/handles` page structure |
+| [x] | Add project support documents and a structured tracker into the repository |
+
+## Current Active Tasks
+
+| Status | Item |
+|---|---|
+| [ ] | Audit every major CTA on `/handles` and assign a meaningful destination |
+| [ ] | Create a reusable family-detail page template |
+| [ ] | Add dedicated routes for all six handle families |
+| [ ] | Improve homepage linking into `/handles` and selected family destinations |
+| [ ] | Verify homepage and `/handles` stability after the next implementation pass |
+| [ ] | Push the next production-safe update to `main` |

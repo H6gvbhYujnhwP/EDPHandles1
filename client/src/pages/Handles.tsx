@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 
 const handleCategories = [
   {
+    slug: "bridge",
     title: "Bridge Handles",
     source: "Ponte · Ponte Modulari",
     description:
@@ -16,6 +17,7 @@ const handleCategories = [
     image: "https://cosma.design/images/products/1731921599203_cosma-handle-13063_C.jpg",
   },
   {
+    slug: "integrated",
     title: "Integrated Handles",
     source: "Presa Chiusa · Integrate",
     description:
@@ -23,6 +25,7 @@ const handleCategories = [
     image: "https://cosma.design/images/products/1731921599203_cosma-handle-13063_D.jpg",
   },
   {
+    slug: "vertical",
     title: "Vertical Handles",
     source: "Verticali · Verticali Integrate",
     description:
@@ -30,6 +33,7 @@ const handleCategories = [
     image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
   },
   {
+    slug: "appliance",
     title: "Appliance Handles",
     source: "Elettrodomestici",
     description:
@@ -37,6 +41,7 @@ const handleCategories = [
     image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
   },
   {
+    slug: "knobs",
     title: "Knobs & Small Hardware",
     source: "Pomoli",
     description:
@@ -44,6 +49,7 @@ const handleCategories = [
     image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
   },
   {
+    slug: "special-designs",
     title: "Special Designs",
     source: "Speciali",
     description:
@@ -323,10 +329,10 @@ export default function Handles() {
                     <h3 className="font-[Cormorant_Garamond] text-3xl text-[#f2ebdf]">{category.title}</h3>
                     <p className="font-[Manrope] text-sm leading-7 text-[#b8ad99]">{category.description}</p>
                     <a
-                      href="#trade-support"
+                      href={`/handles/${category.slug}` }
                       className="mt-auto inline-flex items-center gap-3 font-[Manrope] text-xs uppercase tracking-[0.24em] text-[#f0dfc2] transition hover:text-white"
                     >
-                      Request selection advice
+                      Collection overview
                       <ArrowRight className="h-4 w-4" />
                     </a>
                   </div>

@@ -4,83 +4,8 @@ This page must remain a refined `/handles` destination within the wider site.
 Preserve the dark showroom atmosphere, ivory serif hierarchy, brass accents, and asymmetrical pacing.
 Integrate the six agreed handle families into the editorial structure without disturbing the homepage or other routes.
 */
-
-const handleFamilies = [
-  {
-    number: "01",
-    title: "Bridge Handles",
-    source: "Ponte · Ponte Modulari",
-    text: "Architectural pull handles with composed proportions and an assured grip profile for kitchens, wardrobes, and bespoke cabinetry.",
-    image:
-      "https://cosma.design/images/products/1731921599203_cosma-handle-13063_C.jpg",
-  },
-  {
-    number: "02",
-    title: "Integrated Handles",
-    source: "Presa Chiusa · Integrate",
-    text: "Concealed and integrated solutions for cleaner elevations, quieter joinery lines, and more minimal contemporary compositions.",
-    image:
-      "https://cosma.design/images/products/1731921599203_cosma-handle-13063_D.jpg",
-  },
-  {
-    number: "03",
-    title: "Vertical Handles",
-    source: "Verticali · Verticali Integrate",
-    text: "Elegant upright formats for tall cabinetry and pantry runs where rhythm, reach, and alignment matter as much as finish.",
-    image:
-      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    number: "04",
-    title: "Appliance Handles",
-    source: "Elettrodomestici",
-    text: "Purpose-led hardware for integrated appliances and larger frontages where balance, strength, and finish integrity are essential.",
-    image:
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    number: "05",
-    title: "Knobs & Small Hardware",
-    source: "Pomoli",
-    text: "Compact tactile pieces that add a jewellery-like final note to furniture, dressers, and carefully detailed cabinet fronts.",
-    image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    number: "06",
-    title: "Special Designs",
-    source: "Speciali",
-    text: "More sculptural, individual forms selected for design-led interiors that need a stronger hardware signature without losing restraint.",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
-  },
-];
-
-const finishes = [
-  {
-    name: "Brushed Brass",
-    note: "Warm, softened highlights for interiors that favour depth and quiet contrast.",
-  },
-  {
-    name: "Smoked Steel",
-    note: "A refined graphite-metal tone suited to restrained, contemporary schemes.",
-  },
-  {
-    name: "Matte Black",
-    note: "A sharp architectural finish for cabinetry, internal doors, and minimal detailing.",
-  },
-  {
-    name: "Satin Nickel",
-    note: "Subtle reflectivity with a clean technical edge for versatile specification work.",
-  },
-];
-
-const applications = [
-  "Private residences",
-  "Bespoke kitchens",
-  "Architectural joinery",
-  "Interior refurbishment",
-];
+import { ArrowRight } from "lucide-react";
+import { handleApplications, handleFamilies, handleFinishes } from "@/lib/handleFamilies";
 
 export default function HandlesShowcase() {
   return (
@@ -110,7 +35,7 @@ export default function HandlesShowcase() {
           </nav>
 
           <a
-            href="#contact"
+            href="/handles/catalogue#trade-support"
             className="rounded-full border border-[rgba(214,192,154,0.28)] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.24em] text-stone-100 transition duration-300 hover:border-[rgba(214,192,154,0.55)] hover:bg-white/5"
           >
             Request a Consultation
@@ -200,7 +125,7 @@ export default function HandlesShowcase() {
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {handleFamilies.map((family, index) => (
               <article
-                key={family.title}
+                key={family.slug}
                 className="group editorial-panel overflow-hidden rounded-[1.7rem] transition duration-500 hover:-translate-y-1 hover:border-[rgba(214,192,154,0.32)]"
               >
                 <div className="relative h-64 overflow-hidden border-b border-white/10">
@@ -220,11 +145,14 @@ export default function HandlesShowcase() {
                   </div>
                 </div>
                 <div className="space-y-5 p-6">
-                  <p className="leading-7 text-stone-400">{family.text}</p>
-                  <div className="flex items-center justify-between border-t border-white/10 pt-4 text-xs uppercase tracking-[0.24em] text-stone-500">
-                    <span>Collection overview</span>
-                    <span className="text-[rgba(201,166,108,0.88)]">EDP Handles</span>
-                  </div>
+                  <p className="leading-7 text-stone-400">{family.summary}</p>
+                  <a
+                    href={`/handles/${family.slug}`}
+                    className="inline-flex items-center gap-3 border-t border-white/10 pt-4 text-xs uppercase tracking-[0.24em] text-[rgba(201,166,108,0.88)] transition duration-300 hover:text-stone-50"
+                  >
+                    Collection Overview
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
                 </div>
               </article>
             ))}
@@ -286,7 +214,7 @@ export default function HandlesShowcase() {
           </div>
 
           <div className="grid gap-4 md:grid-cols-2">
-            {finishes.map((finish, index) => (
+            {handleFinishes.map((finish, index) => (
               <article key={finish.name} className="editorial-panel rounded-[1.6rem] p-6 md:p-7">
                 <div className="mb-6 flex items-center justify-between">
                   <span className="font-display text-3xl text-[rgba(201,166,108,0.84)]">0{index + 1}</span>
@@ -323,7 +251,7 @@ export default function HandlesShowcase() {
               In the right setting, hardware becomes part of the room’s discipline. The handle should anchor the hand, register in the light, and sit in conversation with timber, stone, lacquer, and shadow.
             </p>
             <div className="flex flex-wrap gap-3">
-              {applications.map((item) => (
+              {handleApplications.map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-[rgba(214,192,154,0.18)] bg-white/[0.03] px-4 py-2 text-xs uppercase tracking-[0.22em] text-stone-300"

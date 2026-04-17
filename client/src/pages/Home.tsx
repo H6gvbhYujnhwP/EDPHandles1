@@ -130,7 +130,7 @@ export default function Home() {
                 ["Handles", "/handles"],
                 ["Collections", "#collections"],
                 ["Heritage", "#heritage"],
-                ["Trade Portal", "#trade"],
+                ["Trade Portal", "/handles/catalogue#trade-support"],
                 ["Contact", "#contact"],
               ].map(([label, href]) => (
                 <a
@@ -148,7 +148,7 @@ export default function Home() {
                 asChild
                 className="rounded-none border border-[#c6a66b]/40 bg-[#f6f0e6] px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#d8c2a0]"
               >
-                <a href="#trade">Get Started</a>
+                <a href="/handles">Get Started</a>
               </Button>
             </div>
 
@@ -169,7 +169,7 @@ export default function Home() {
                   ["Handles", "/handles"],
                   ["Collections", "#collections"],
                   ["Heritage", "#heritage"],
-                  ["Trade Portal", "#trade"],
+                  ["Trade Portal", "/handles/catalogue#trade-support"],
                   ["Contact", "#contact"],
                 ].map(([label, href]) => (
                   <a
@@ -185,7 +185,7 @@ export default function Home() {
                   asChild
                   className="mt-2 w-full rounded-none border border-[#c6a66b]/40 bg-[#f6f0e6] py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#d8c2a0]"
                 >
-                  <a href="#trade" onClick={() => setMobileOpen(false)}>
+                  <a href="/handles" onClick={() => setMobileOpen(false)}>
                     Get Started
                   </a>
                 </Button>
@@ -227,7 +227,7 @@ export default function Home() {
                   asChild
                   className="w-full rounded-none border border-white/14 bg-white/6 px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-white/12 sm:w-auto"
                 >
-                  <a href="#trade">Trade Portal</a>
+                  <a href="/handles/catalogue#trade-support">Trade Portal</a>
                 </Button>
               </div>
 
@@ -388,13 +388,13 @@ export default function Home() {
                     asChild
                     className="w-full rounded-none border border-[#d7be92]/45 bg-[#f5efe5] px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#ddc7a5] sm:w-auto"
                   >
-                    <a href="#contact">Access Trade Portal</a>
+                    <a href="/handles/catalogue#trade-support">Access Trade Portal</a>
                   </Button>
                   <Button
                     asChild
                     className="w-full rounded-none border border-white/14 bg-transparent px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-white/10 sm:w-auto"
                   >
-                    <a href="#contact">Schedule Consultation</a>
+                    <a href="/handles/catalogue#trade-support">Schedule Consultation</a>
                   </Button>
                 </div>
               </div>
