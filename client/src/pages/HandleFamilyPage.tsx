@@ -13,6 +13,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import SiteHeader from "@/components/site/SiteHeader";
 import { cosmaFamilyProducts, type ImportedHandleProduct } from "@/lib/cosmaFamilyProducts";
 import { handleFamilies } from "@/lib/handleFamilies";
 
@@ -143,33 +144,7 @@ export default function HandleFamilyPage() {
       <main className="relative overflow-hidden bg-[#0a0908] text-stone-100">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(201,166,108,0.12),transparent_26%)]" />
 
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-[rgba(12,11,10,0.76)] backdrop-blur-2xl">
-          <div className="container flex items-center justify-between py-5">
-            <a href="/" className="flex items-center gap-3 text-sm tracking-[0.32em] text-stone-100">
-              <span className="inline-block h-2 w-2 rounded-full bg-[rgba(201,166,108,0.95)] shadow-[0_0_18px_rgba(201,166,108,0.8)]" />
-              EDP HANDLES
-            </a>
-
-            <nav className="hidden items-center gap-8 text-sm text-stone-300 lg:flex">
-              <a href="/handles" className="hover:text-stone-50">
-                Handles Overview
-              </a>
-              <a href="/handles/catalogue" className="hover:text-stone-50">
-                Catalogue View
-              </a>
-              <a href="#contact" className="hover:text-stone-50">
-                Enquiry
-              </a>
-            </nav>
-
-            <a
-              href="/handles/catalogue#trade-support"
-              className="rounded-full border border-[rgba(214,192,154,0.28)] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.24em] text-stone-100 transition duration-300 hover:border-[rgba(214,192,154,0.55)] hover:bg-white/5"
-            >
-              Request a Consultation
-            </a>
-          </div>
-        </header>
+        <SiteHeader />
 
         <section className="relative isolate px-0 pb-12 pt-6 md:pb-18 md:pt-8">
           <div className="container">

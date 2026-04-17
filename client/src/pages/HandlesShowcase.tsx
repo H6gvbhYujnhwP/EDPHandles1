@@ -5,6 +5,7 @@ Preserve the dark showroom atmosphere, ivory serif hierarchy, brass accents, and
 Integrate the six agreed handle families into the editorial structure without disturbing the homepage or other routes.
 */
 import { ArrowRight } from "lucide-react";
+import SiteHeader from "@/components/site/SiteHeader";
 import { handleApplications, handleFamilies, handleFinishes } from "@/lib/handleFamilies";
 
 export default function HandlesShowcase() {
@@ -12,36 +13,7 @@ export default function HandlesShowcase() {
     <main className="relative overflow-hidden bg-[#0a0908] text-stone-100">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,166,108,0.14),transparent_24%)]" />
 
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[rgba(12,11,10,0.72)] backdrop-blur-2xl">
-        <div className="container flex items-center justify-between py-5">
-          <a href="/" className="flex items-center gap-3 text-sm tracking-[0.32em] text-stone-100">
-            <span className="inline-block h-2 w-2 rounded-full bg-[rgba(201,166,108,0.95)] shadow-[0_0_18px_rgba(201,166,108,0.8)]" />
-            EDP HANDLES
-          </a>
-
-          <nav className="hidden items-center gap-8 text-sm text-stone-300 lg:flex">
-            <a href="#collections" className="hover:text-stone-50">
-              Families
-            </a>
-            <a href="#story" className="hover:text-stone-50">
-              Story
-            </a>
-            <a href="#finishes" className="hover:text-stone-50">
-              Finishes
-            </a>
-            <a href="#contact" className="hover:text-stone-50">
-              Enquiry
-            </a>
-          </nav>
-
-          <a
-            href="/handles/catalogue#trade-support"
-            className="rounded-full border border-[rgba(214,192,154,0.28)] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.24em] text-stone-100 transition duration-300 hover:border-[rgba(214,192,154,0.55)] hover:bg-white/5"
-          >
-            Request a Consultation
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section id="top" className="relative isolate px-0 pb-14 pt-6 md:pb-24 md:pt-8">
         <div className="container">

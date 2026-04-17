@@ -86,3 +86,13 @@ The local multi-family preview confirmed that `/handles/integrated` now renders 
 A further local preview check on `/handles/integrated` confirmed that the imported listing renders as full live product cards beneath the hero area, including grouped source-category count pills for Closed Grip, Modular Closed Grip, Integrated, and Integrated Modular. The first visible cards also displayed the internal `Technical Sheet` action, confirming that the popup-driven specification pattern is now present beyond the Bridge family.
 The local preview confirmed that the homepage remained intact after the multi-family rollout, with its original hero, navigation, and primary calls to action still rendering correctly. A follow-up check on `/handles` also confirmed that the main editorial overview page remained stable and unchanged in structure while the deeper family routes had been expanded separately.
 An additional local preview check on `/handles/appliance` confirmed that a smaller imported family also renders correctly after the rollout. The page showed 4 imported appliance products, immediate live listing behaviour, and the same internal `Technical Sheet` card action used on Bridge and Integrated, which supports the overall multi-family pattern before push.
+
+## Navigation unification local verification — Apr 17 2026
+
+The local preview on port 3004 confirms that the homepage now renders with the shared master header component using the same logo lockup, primary menu, and `Get Started` CTA as the original top-level experience.
+
+The local preview on `/handles` now shows the same top navigation as the homepage instead of the previous handles-specific header. Visible shared links across both routes are **Handles**, **Collections**, **Heritage**, **Trade Portal**, **Contact**, and **Get Started**, which restores brand continuity across the route change.
+
+The local preview on `/handles/bridge` also shows the same shared top navigation, confirming that the master header now persists on deeper family-detail routes rather than switching to a route-owned section header.
+
+A further local preview check on `/handles/catalogue` confirmed that the catalogue route now uses the same master navigation as the homepage, `/handles`, and the family pages. This resolves the previous feeling that separate microsite-style menus were appearing as users moved between routes.
