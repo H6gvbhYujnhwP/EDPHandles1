@@ -3,7 +3,7 @@ Design reminder for this file: Neo-Atelier Italian Editorial.
 Use asymmetrical compositions, generous whitespace, serif-led hierarchy, brass-accent details, and calm premium interactions.
 Every section should feel like a curated showroom rather than a generic centered landing page.
 */
-import { ArrowRight, MoveRight, PhoneCall, ShieldCheck, Sparkles, SwatchBook } from "lucide-react";
+import { ArrowRight, Building2, MapPin, MoveRight, PhoneCall, ShieldCheck, Sparkles, SwatchBook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SiteHeader from "@/components/site/SiteHeader";
 
@@ -52,34 +52,19 @@ const internalFittings = [
 
 const featurePoints = [
   {
-    title: "Premium Materials",
-    text: "Sourced from distinguished suppliers in Italy and across Europe for lasting finish integrity.",
+    title: "Exclusive Cosma Distribution",
+    text: "Exclusive UK agency and distribution support for Cosma Italian handles, giving customers direct access to design-led collections and dependable availability.",
     icon: SwatchBook,
   },
   {
-    title: "Artisan Crafted",
-    text: "Each handle is finished with the care, accuracy, and tactile nuance expected of specialist makers.",
+    title: "Technical Guidance",
+    text: "Experienced staff provide practical product advice for furniture manufacturers, kitchen studios, and associated trade customers across the UK.",
     icon: Sparkles,
   },
   {
-    title: "Trade Focused",
-    text: "Designed around the expectations of kitchen studios, fitters, developers, and specification partners.",
+    title: "UK Stockholding",
+    text: "A Southend-based stockholding programme supports responsive fulfilment, continuity, and service for specification-led projects.",
     icon: ShieldCheck,
-  },
-];
-
-const footerGroups = [
-  {
-    label: "Internal Fittings",
-    links: ["MIRA System", "Hanging Rails", "Accessories"],
-  },
-  {
-    label: "Trade",
-    links: ["Trade Portal", "Pricing", "Support"],
-  },
-  {
-    label: "Company",
-    links: ["About", "Contact", "Privacy"],
   },
 ];
 
@@ -169,19 +154,20 @@ export default function Home() {
             </div>
 
             <div className="max-w-3xl">
-              <p className="font-[Manrope] text-xs uppercase tracking-[0.34em] text-[#a78e68]">Three Decades of Mastery</p>
-              <h2 className="mt-5 max-w-[11ch] font-[Cormorant_Garamond] text-5xl leading-[0.96] font-light tracking-[-0.04em] text-[#f4eee4] sm:text-6xl">
-                Authentic Italian detailing for British kitchens.
+              <p className="font-[Manrope] text-xs uppercase tracking-[0.34em] text-[#a78e68]">About EDP (UK) Ltd</p>
+              <h2 className="mt-5 max-w-[12ch] font-[Cormorant_Garamond] text-5xl leading-[0.96] font-light tracking-[-0.04em] text-[#f4eee4] sm:text-6xl">
+                Exclusive UK distribution with over 28 years of industry experience.
               </h2>
               <p className="mt-8 max-w-2xl font-[Manrope] text-lg leading-8 text-[#bbaf9c]">
-                Since our founding, EDP Handles has been dedicated to bringing authentic Italian
-                craftsmanship to kitchens across the United Kingdom. Every handle is a study in
-                precision, elegance, and the enduring traditions of material-led design.
+                EDP (UK) Ltd supplies high-quality components to the furniture and associated industries,
+                with a long-standing focus on selecting products that combine design distinction,
+                dependable engineering, and commercial practicality for the UK market.
               </p>
               <p className="mt-6 max-w-2xl font-[Manrope] text-base leading-8 text-[#9f937f]">
-                Our collections unite contemporary silhouettes with classical heritage, giving kitchen
-                studios and trade professionals access to fittings that feel both highly usable and quietly
-                exceptional.
+                Based in Southend-on-Sea, Essex, the company supports customers with full UK stockholding,
+                professional technical advice, and exclusive access to Cosma Italian handles. Under the
+                direction of Mark Willett, the business continues to develop an innovative range shaped by
+                reliability, product development, and premium European craftsmanship.
               </p>
 
               <div className="mt-12 grid gap-5 md:grid-cols-3">
@@ -323,42 +309,79 @@ export default function Home() {
       </main>
 
       <footer id="contact" className="border-t border-white/10 bg-[#0c0a09] py-16">
-        <div className="container grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="container grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
           <div>
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-[#c6a66b]/35 bg-white/5 text-sm font-semibold text-[#f1dfbf]">
                 E
               </div>
               <div>
-                <p className="font-[Manrope] text-base font-semibold tracking-wide text-white">EDP Handles</p>
+                <p className="font-[Manrope] text-base font-semibold tracking-wide text-white">EDP (UK) Ltd</p>
                 <p className="font-[Manrope] text-xs uppercase tracking-[0.28em] text-[#a68e68]">
-                  Italian Craftsmanship
+                  Exclusive UK Distributors for Cosma
                 </p>
               </div>
             </div>
             <p className="mt-6 max-w-lg font-[Manrope] text-sm leading-7 text-[#9f937f]">
-              Bringing Italian style to the UK for over 30 years with refined cabinet hardware curated for
-              kitchens that value both beauty and exacting detail.
+              For product guidance, stock enquiries, and trade support, EDP (UK) Ltd offers direct access
+              to premium Italian handle and internal-fittings collections for furniture and associated
+              industries throughout the UK.
             </p>
+
+            <div className="mt-8 grid gap-5 sm:grid-cols-2">
+              <article className="border border-white/10 bg-white/[0.03] p-6">
+                <div className="flex items-center gap-3 text-[#dbc39f]">
+                  <MapPin className="h-5 w-5" />
+                  <p className="font-[Manrope] text-xs uppercase tracking-[0.24em] text-[#8d7960]">Visit</p>
+                </div>
+                <p className="mt-4 font-[Manrope] text-sm leading-7 text-[#e4d8c5]">
+                  Unit 1, 40 Comet Way<br />
+                  Southend on Sea, Essex SS2 6GD
+                </p>
+              </article>
+              <article className="border border-white/10 bg-white/[0.03] p-6">
+                <div className="flex items-center gap-3 text-[#dbc39f]">
+                  <PhoneCall className="h-5 w-5" />
+                  <p className="font-[Manrope] text-xs uppercase tracking-[0.24em] text-[#8d7960]">Call</p>
+                </div>
+                <p className="mt-4 font-[Manrope] text-sm leading-7 text-[#e4d8c5]">
+                  Tel. 01702 618877<br />
+                  Professional advice for trade and specification enquiries.
+                </p>
+              </article>
+            </div>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-3">
-            {footerGroups.map((group) => (
-              <div key={group.label}>
-                <p className="font-[Manrope] text-xs uppercase tracking-[0.24em] text-[#88755d]">{group.label}</p>
-                <div className="mt-4 flex flex-col gap-3">
-                  {group.links.map((link) => (
-                    <a
-                      key={link}
-                      href={link === "Contact" ? "#contact" : link === "About" ? "#heritage" : link.includes("Trade") ? "#trade" : "#internal-fittings"}
-                      className="font-[Manrope] text-sm text-[#d6c7b0] transition hover:text-white"
-                    >
-                      {link}
-                    </a>
-                  ))}
-                </div>
+          <div className="relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-[#14110f] p-8 sm:p-10">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/fRVbFQ3JDagBgP7ipYs35A/edp-cta-dark-showroom-5xCUtERPZdSioeLcAoTr4h.webp"
+              alt="Premium showroom mood image for EDP contact section"
+              className="absolute inset-0 h-full w-full object-cover opacity-25"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(12,10,9,0.96),rgba(12,10,9,0.82)_55%,rgba(12,10,9,0.92))]" />
+            <div className="relative">
+              <div className="flex items-center gap-3 text-[#dbc39f]">
+                <Building2 className="h-5 w-5" />
+                <p className="font-[Manrope] text-xs uppercase tracking-[0.26em] text-[#8d7960]">Company Profile</p>
               </div>
-            ))}
+              <h3 className="mt-5 max-w-[12ch] font-[Cormorant_Garamond] text-4xl font-light text-[#f5eee4] sm:text-5xl">
+                Built around service, stockholding, and dependable technical support.
+              </h3>
+              <p className="mt-6 max-w-xl font-[Manrope] text-sm leading-7 text-[#c8baa4]">
+                EDP (UK) Ltd is a leading distributor of components to the furniture and associated
+                industries, focused on supplying innovative, reliable products backed by experienced advice
+                and responsive UK support.
+              </p>
+              <p className="mt-5 max-w-xl font-[Manrope] text-sm leading-7 text-[#a89983]">
+                As exclusive UK distributors for Cosma, the business combines Italian product development
+                with local availability, helping customers specify solutions that are both technically sound
+                and commercially practical.
+              </p>
+              <div className="mt-8 border-t border-white/10 pt-6">
+                <p className="font-[Cormorant_Garamond] text-3xl text-[#f3e7d6]">Mark Willett</p>
+                <p className="mt-1 font-[Manrope] text-xs uppercase tracking-[0.24em] text-[#9f8a6c]">Director</p>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
