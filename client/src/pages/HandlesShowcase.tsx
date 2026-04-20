@@ -9,6 +9,15 @@ import EnquiryFormSection from "@/components/site/EnquiryFormSection";
 import SiteHeader from "@/components/site/SiteHeader";
 import { handleApplications, handleFamilies, handleFinishes } from "@/lib/handleFamilies";
 
+const approvedFamilyCardImages: Record<string, string> = {
+  bridge: "https://cosma.design/images/products/1616244781204_20.096-d.jpg",
+  integrated: "https://cosma.design/images/products/1617185827432_anta%2012975-2.jpg",
+  vertical: "https://cosma.design/images/products/1774428213949_cosma-handle-000138-beige-A.jpg",
+  appliance: "https://cosma.design/images/products/28156-d.jpg",
+  knobs: "https://cosma.design/images/products/24131.E-1.jpg",
+  "special-designs": "https://cosma.design/images/products/1617887582672_557_d%20MOD1.jpg",
+};
+
 export default function HandlesShowcase() {
   return (
     <main className="relative overflow-hidden bg-[#0a0908] text-stone-100">
@@ -110,11 +119,11 @@ export default function HandlesShowcase() {
                 className="group editorial-panel block overflow-hidden rounded-[1.7rem] transition duration-500 hover:-translate-y-1 hover:border-[rgba(214,192,154,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(201,166,108,0.72)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0908]"
               >
                 <div className="relative h-64 overflow-hidden border-b border-white/10">
-                  <img
-                    src={family.image}
-                    alt={family.title}
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
-                  />
+                    <img
+                      src={approvedFamilyCardImages[family.slug] ?? family.image}
+                      alt={family.title}
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+                    />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.5))]" />
                   <div className="absolute left-5 top-5 flex items-center gap-3">
                     <span className="font-display text-3xl text-[rgba(201,166,108,0.9)]">{family.number}</span>
