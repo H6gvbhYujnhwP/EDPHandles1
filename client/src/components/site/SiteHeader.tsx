@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 
 const siteNavLinks = [
   ["Handles", "/handles"],
-  ["Internal Fittings", "/#internal-fittings"],
-  ["About", "/#heritage"],
-  ["Trade Portal", "/handles/catalogue#trade-support"],
-  ["Contact", "/#contact"],
+  ["Internal Fittings", "/internal-fittings"],
+  ["About", "/about"],
+  ["Trade Portal", "/trade-portal"],
+  ["Contact", "/contact"],
 ] as const;
 
 export default function SiteHeader() {
