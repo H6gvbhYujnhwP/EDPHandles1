@@ -1,4 +1,5 @@
 import { ArrowRight, Mail, PhoneCall } from "lucide-react";
+import { type FormEvent, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { companyProfile } from "@/lib/edpSiteContent";
 
@@ -10,7 +11,11 @@ type EnquiryFormSectionProps = {
   className?: string;
 };
 
+type SubmissionState = "idle" | "submitting" | "success" | "error";
+
 const formAction = "https://formspree.io/f/mgorzben";
+const successMessage = "Thank you for your interest, we will be in touch.";
+const errorMessage = "Sorry, there was a problem sending your enquiry. Please try again or contact EDP directly.";
 
 export default function EnquiryFormSection({
   pageName,
@@ -19,12 +24,47 @@ export default function EnquiryFormSection({
   intro = "Use the form below to discuss product selection, stockholding, finishes, technical questions, or project support. Messages are sent directly to the EDP mailbox for follow-up.",
   className = "",
 }: EnquiryFormSectionProps) {
+  const [submissionState, setSubmissionState] = useState<SubmissionState>("idle");
+  const [submissionMessage, setSubmissionMessage] = useState("");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    setSubmissionState("submitting");
+    setSubmissionMessage("");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(formAction, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed with status ${response.status}`);
+      }
+
+      form.reset();
+      setSubmissionState("success");
+      setSubmissionMessage(successMessage);
+    } catch (error) {
+      console.error("EDP enquiry form submission failed", error);
+      setSubmissionState("error");
+      setSubmissionMessage(errorMessage);
+    }
+  }
+
   return (
     <section id="enquiry-form" className={`border-t border-white/8 py-24 sm:py-28 ${className}`.trim()}>
       <div className="container grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch">
         <div className="border border-white/10 bg-white/[0.03] p-8 sm:p-10 lg:p-12">
           <p className="font-[Manrope] text-xs uppercase tracking-[0.34em] text-[#a78e68]">{eyebrow}</p>
-          <h2 className="mt-5 max-w-[11ch] font-[Cormorant_Garamond] text-5xl leading-[0.96] font-light tracking-[-0.04em] text-[#f5eee4] sm:text-6xl">
+          <h2 className="mt-5 max-w-[11ch] font-[Cormorant_Garamond] text-5xl font-light leading-[0.96] tracking-[-0.04em] text-[#f5eee4] sm:text-6xl">
             {title}
           </h2>
           <p className="mt-8 max-w-xl font-[Manrope] text-base leading-8 text-[#bbaf9c]">{intro}</p>
@@ -57,7 +97,7 @@ export default function EnquiryFormSection({
             </h3>
           </div>
 
-          <form action={formAction} method="POST" className="grid gap-5">
+          <form onSubmit={handleSubmit} className="grid gap-5">
             <input type="hidden" name="source_page" value={pageName} />
             <input type="hidden" name="mailbox" value="kevin@mail.edphandles.com" />
             <input type="hidden" name="_subject" value={`EDP website enquiry — ${pageName}`} />
@@ -143,14 +183,28 @@ export default function EnquiryFormSection({
             </label>
 
             <div className="flex flex-col gap-4 border-t border-white/10 pt-5 sm:flex-row sm:items-center sm:justify-between">
-              <p className="max-w-xl font-[Manrope] text-sm leading-7 text-[#9f937f]">
-                Messages from this form are sent through Formspree and routed to the EDP enquiry mailbox.
-              </p>
+              <div className="max-w-xl space-y-3">
+                <p className="font-[Manrope] text-sm leading-7 text-[#9f937f]">
+                  Messages from this form are sent through Formspree and routed to the EDP enquiry mailbox.
+                </p>
+                {submissionMessage ? (
+                  <p
+                    role="status"
+                    aria-live="polite"
+                    className={`font-[Manrope] text-sm leading-7 ${
+                      submissionState === "success" ? "text-[#d7c29b]" : "text-[#d99883]"
+                    }`}
+                  >
+                    {submissionMessage}
+                  </p>
+                ) : null}
+              </div>
               <Button
                 type="submit"
-                className="group rounded-none border border-[#c6a66b]/40 bg-[#f6f0e6] px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#d8c2a0]"
+                disabled={submissionState === "submitting"}
+                className="group rounded-none border border-[#c6a66b]/40 bg-[#f6f0e6] px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#d8c2a0] disabled:cursor-not-allowed disabled:opacity-70"
               >
-                Send Enquiry
+                {submissionState === "submitting" ? "Sending..." : "Send Enquiry"}
                 <ArrowRight className="ml-3 h-4 w-4 transition duration-300 group-hover:translate-x-1" />
               </Button>
             </div>

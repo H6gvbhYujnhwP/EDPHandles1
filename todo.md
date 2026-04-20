@@ -34,4 +34,7 @@ This repository tracks the **full EDP Handles website** as one progressive live 
 | [ ] | Add dedicated routes for all six handle families |
 | [ ] | Improve homepage linking into `/handles` and selected family destinations |
 | [ ] | Verify homepage and `/handles` stability after the next implementation pass |
+| [x] | Keep all shared enquiry form submissions on-page instead of redirecting to Formspree |
+| [x] | Show an in-page confirmation message after successful submission across all form locations |
+| [x] | Verify the updated submission behaviour on every page using the shared enquiry form |
 | [ ] | Push the next production-safe update to `main` |
