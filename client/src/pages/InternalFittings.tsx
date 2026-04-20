@@ -1,4 +1,5 @@
 import { ArrowRight, PhoneCall } from "lucide-react";
+import EnquiryFormSection from "@/components/site/EnquiryFormSection";
 import SiteFooter from "@/components/site/SiteFooter";
 import SiteHeader from "@/components/site/SiteHeader";
 import { Button } from "@/components/ui/button";
@@ -56,6 +57,13 @@ export default function InternalFittings() {
             </div>
           </div>
         </section>
+
+        <EnquiryFormSection
+          pageName="Internal Fittings"
+          eyebrow="Internal Fittings Enquiry"
+          title="Discuss MIRA, rails, drawers, and wardrobe internals."
+          intro="Use the form to discuss internal fittings selection, layout requirements, finish coordination, and specification support for wardrobe and furniture projects."
+        />
 
         <section className="py-24 sm:py-28">
           <div className="container">

@@ -57,7 +57,7 @@ export default function SiteHeader() {
               asChild
               className="rounded-none border border-[#c6a66b]/40 bg-[#f6f0e6] px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#d8c2a0]"
             >
-              <a href="/handles">Get Started</a>
+              <a href="#enquiry-form">Make Enquiry</a>
             </Button>
           </div>
 
@@ -88,8 +88,8 @@ export default function SiteHeader() {
                 asChild
                 className="mt-2 w-full rounded-none border border-[#c6a66b]/40 bg-[#f6f0e6] py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#d8c2a0]"
               >
-                <a href="/handles" onClick={() => setMobileOpen(false)}>
-                  Get Started
+                <a href="#enquiry-form" onClick={() => setMobileOpen(false)}>
+                  Make Enquiry
                 </a>
               </Button>
             </div>

@@ -43,10 +43,14 @@ The governing principle remains unchanged: **EDP Handles is one progressive live
 | [x] | Multi-family import workflow created for Integrated, Vertical, Appliance, Knobs, and Special |
 | [x] | Imported listing and internal Technical Sheet pattern extended across the remaining family pages locally |
 | [x] | Homepage, `/handles`, `/handles/bridge`, `/handles/integrated`, and `/handles/appliance` verified locally after the rollout |
+| [x] | Legacy anchor-led sections converted into standalone routes for `/internal-fittings`, `/about`, `/trade-portal`, and `/contact` |
+| [x] | Internal Fittings content repurposed from the former Collections journey using MIRA wardrobe internals content |
+| [x] | About and Contact content updated with real EDP (UK) Ltd company information |
+| [x] | Shared Formspree enquiry form integrated prominently across the homepage, main standalone pages, `/handles`, and handle family pages |
 
 ## Current Phase
 
-The current phase is to turn `/handles` from a strong editorial overview into a working collection hub. That phase is now materially advanced: major CTAs have been routed more meaningfully, family-detail routes have been introduced, homepage pathways into the handles architecture have been tightened without disturbing the wider site, and the family-page pattern now supports imported listing views with internal Technical Sheet popups across the collection structure.
+The current phase is to consolidate the wider EDP site into a more commercially usable multi-page structure without disturbing the protected homepage at `/`. That phase now includes the standalone Internal Fittings, About, Trade Portal, and Contact routes, alongside a shared enquiry pathway built around the new Formspree integration across the homepage, main page templates, `/handles`, and the handle family detail pages.
 
 ## Active Task Checklist
 
@@ -66,18 +70,22 @@ The current phase is to turn `/handles` from a strong editorial overview into a 
 | [x] | Fix the internal Technical Sheet modal so it remains contained and readable on mobile layouts |
 | [x] | Add a premium branded favicon aligned with the dark editorial EDP identity |
 | [x] | Refresh the roadmap, staging, and next-step documentation so it matches the current implemented site state |
+| [x] | Repurpose the former Collections journey into a dedicated Internal Fittings route and homepage teaser pathway |
+| [x] | Convert legacy anchor-led About, Trade Portal, and Contact sections into standalone routes |
+| [x] | Add a reusable Formspree enquiry form prominently to the homepage and all primary routed pages |
+| [x] | Extend the same enquiry anchor pattern to `/handles` and the handle family detail pages so the shared header CTA remains valid |
 | [ ] | Decide whether to introduce dedicated product-detail views inside EDP or remain at family-listing depth for the next release |
 | [x] | Push the completed multi-family rollout to `main` |
-| [ ] | Confirm the live deployment after the multi-family rollout reaches production |
+| [ ] | Confirm the live deployment after the latest standalone-page and enquiry-form updates reach production |
 
 ## Next Planned Build Order
 
 | Priority | Planned action | Intent |
 |---|---|---|
-| 1 | Confirm the latest push and monitor production deployment | Move the newly verified mobile modal and favicon update into live review |
+| 1 | Confirm the latest push and monitor production deployment | Verify the standalone-page and enquiry-form rollout once it reaches Render |
 | 2 | Preserve subfamily labels in the imported data | Keep future split points ready for Closed Grip and Modular Closed Grip |
 | 3 | Decide on EDP-native product detail depth | Choose between family-listing only or internal product pages |
-| 4 | Refine enquiry and trade-conversion pathways from product cards | Turn browsing into stronger commercial next steps |
+| 4 | Refine enquiry and trade-conversion pathways from product cards and forms | Turn browsing into stronger commercial next steps |
 | 5 | Extend into finishes and specification guidance | Build the next connected editorial-commercial layer |
 
 ## Change-Control Note

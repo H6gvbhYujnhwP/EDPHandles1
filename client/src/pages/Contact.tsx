@@ -1,4 +1,5 @@
 import { Building2, MapPin, PhoneCall } from "lucide-react";
+import EnquiryFormSection from "@/components/site/EnquiryFormSection";
 import SiteFooter from "@/components/site/SiteFooter";
 import SiteHeader from "@/components/site/SiteHeader";
 import { Button } from "@/components/ui/button";
@@ -49,6 +50,13 @@ export default function Contact() {
             </div>
           </div>
         </section>
+
+        <EnquiryFormSection
+          pageName="Contact"
+          eyebrow="Contact Form"
+          title="Send an enquiry directly to EDP."
+          intro="Use the contact form for project questions, stockholding requests, finish advice, or general product support. Messages route directly into the EDP enquiry mailbox."
+        />
 
         <section className="py-24 sm:py-28">
           <div className="container grid gap-5 lg:grid-cols-3">

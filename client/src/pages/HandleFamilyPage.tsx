@@ -13,6 +13,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import EnquiryFormSection from "@/components/site/EnquiryFormSection";
 import SiteHeader from "@/components/site/SiteHeader";
 import { cosmaFamilyProducts, type ImportedHandleProduct } from "@/lib/cosmaFamilyProducts";
 import { handleFamilies } from "@/lib/handleFamilies";
@@ -177,7 +178,7 @@ export default function HandleFamilyPage() {
                   </div>
                   <div className="flex flex-col gap-4 sm:flex-row">
                     <a
-                      href="/handles/catalogue#trade-support"
+                      href="#enquiry-form"
                       className="inline-flex items-center justify-center rounded-full bg-[rgba(201,166,108,0.92)] px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-stone-950 transition duration-300 hover:bg-[rgba(220,187,129,0.98)]"
                     >
                       Discuss This Family
@@ -209,6 +210,13 @@ export default function HandleFamilyPage() {
             </div>
           </div>
         </section>
+
+        <EnquiryFormSection
+          pageName={family.title}
+          eyebrow="Family Enquiry"
+          title={`Discuss the ${family.title} family in detail.`}
+          intro="Use the enquiry form to discuss sizes, finishes, availability, application suitability, and broader specification support for this handle family."
+        />
 
         {importedProducts.length > 0 && (
           <section className="relative pb-12 pt-2 md:pb-16 md:pt-4">

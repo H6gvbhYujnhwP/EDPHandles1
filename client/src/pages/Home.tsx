@@ -4,6 +4,7 @@ Use asymmetrical compositions, generous whitespace, serif-led hierarchy, brass-a
 Every section should feel like a curated showroom rather than a generic centered landing page.
 */
 import { ArrowRight, Building2, MoveRight, PhoneCall } from "lucide-react";
+import EnquiryFormSection from "@/components/site/EnquiryFormSection";
 import SiteFooter from "@/components/site/SiteFooter";
 import SiteHeader from "@/components/site/SiteHeader";
 import { Button } from "@/components/ui/button";
@@ -85,6 +86,13 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <EnquiryFormSection
+          pageName="Homepage"
+          eyebrow="General Enquiry"
+          title="Start a handles or fittings conversation."
+          intro="Use the enquiry form to discuss premium handles, internal fittings, stockholding, finish options, and project-led advice with EDP before moving deeper into the range."
+        />
 
         <section className="border-y border-white/8 bg-[#161311]/70 py-24 sm:py-28">
           <div className="container grid gap-16 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">

@@ -1,4 +1,5 @@
 import { ArrowRight, PhoneCall, ShieldCheck, SwatchBook } from "lucide-react";
+import EnquiryFormSection from "@/components/site/EnquiryFormSection";
 import SiteFooter from "@/components/site/SiteFooter";
 import SiteHeader from "@/components/site/SiteHeader";
 import { Button } from "@/components/ui/button";
@@ -70,6 +71,13 @@ export default function TradePortal() {
             </div>
           </div>
         </section>
+
+        <EnquiryFormSection
+          pageName="Trade Portal"
+          eyebrow="Trade Enquiry"
+          title="Discuss trade access, specification, and project support."
+          intro="Use the form to open a trade conversation with EDP about handles, internal fittings, stockholding, and specification support for your projects."
+        />
 
         <section className="py-24 sm:py-28">
           <div className="container grid gap-5 lg:grid-cols-3">

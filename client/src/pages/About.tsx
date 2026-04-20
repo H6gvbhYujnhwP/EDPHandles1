@@ -1,3 +1,4 @@
+import EnquiryFormSection from "@/components/site/EnquiryFormSection";
 import SiteFooter from "@/components/site/SiteFooter";
 import SiteHeader from "@/components/site/SiteHeader";
 import { aboutFeaturePoints, companyProfile, sharedImages } from "@/lib/edpSiteContent";
@@ -36,6 +37,13 @@ export default function About() {
             </div>
           </div>
         </section>
+
+        <EnquiryFormSection
+          pageName="About"
+          eyebrow="Talk to EDP"
+          title="Start a conversation with the UK distribution team."
+          intro="Use the form to discuss product access, stockholding, specification guidance, or a new project with EDP (UK) Ltd and the wider Cosma-led offer."
+        />
 
         <section className="border-b border-white/8 bg-[#161311]/70 py-24 sm:py-28">
           <div className="container grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
