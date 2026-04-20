@@ -7,54 +7,46 @@ import { ArrowRight, MoveRight, PhoneCall, ShieldCheck, Sparkles, SwatchBook } f
 import { Button } from "@/components/ui/button";
 import SiteHeader from "@/components/site/SiteHeader";
 
-const collections = [
+const internalFittings = [
   {
-    name: "Modern Brass",
-    description: "Clean linear profiles with warm brushed finishes for contemporary cabinetry.",
-    image:
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/fRVbFQ3JDagBgP7ipYs35A/edp-collection-modern-kitchen-h3DZ3cFDwrFHTeYwoHduPj.webp",
+    name: "MIRA System",
+    description: "A modular wardrobe-organisation system designed around refined aluminium profiles, soft edges, and fast custom assembly.",
+    image: "/images/internal-fittings-mira-hero.jpg",
   },
   {
-    name: "Matte Steel",
-    description: "Understated cool-toned hardware designed for composed architectural interiors.",
-    image:
-      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
+    name: "Hanging Rails",
+    description: "Minimal wardrobe hanging rails with dedicated side and shelf supports, available with premium covering options.",
+    image: "/images/internal-fittings/hanging-rails-correct.jpg",
   },
   {
-    name: "Curved Elegance",
-    description: "Soft silhouettes that bring sculptural tactility to bespoke kitchen joinery.",
-    image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+    name: "Shelf Frames",
+    description: "Fixed shelf-frame components that create a clean internal architecture for glass or material shelf inserts.",
+    image: "/images/internal-fittings/pull-out-frame.jpg",
   },
   {
-    name: "Leather Luxury",
-    description: "Rich material pairings for interiors that balance warmth, craft, and distinction.",
-    image:
-      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+    name: "Pull-Out Frames",
+    description: "Flexible pull-out frame assemblies that bring accessible wardrobe storage and a premium engineered feel.",
+    image: "/images/internal-fittings/shelf-frame.jpg",
   },
   {
-    name: "Geometric Bold",
-    description: "Confident statement forms engineered for design-led residential projects.",
-    image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+    name: "Drawers",
+    description: "Straight-cut aluminium drawer construction with optional glass-front detailing for bespoke interior schemes.",
+    image: "/images/internal-fittings/drawers-correct.png",
   },
   {
-    name: "Minimalist",
-    description: "Refined essentials that let premium surfaces and exact detailing lead the room.",
-    image:
-      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80",
+    name: "Trays & Dividers",
+    description: "Organised internal storage solutions for jewellery, watches, and small accessories, designed to fit the MIRA system.",
+    image: "/images/internal-fittings/trays-dividers-correct.png",
   },
   {
-    name: "Vintage Brass",
-    description: "Time-softened character inspired by heritage fittings and classical proportions.",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+    name: "Trouser Holders",
+    description: "Dedicated trouser-holder profiles with non-slip detailing for tailored wardrobe functionality.",
+    image: "/images/internal-fittings/trouser-holders-correct.png",
   },
   {
-    name: "Mixed Metals",
-    description: "Layered finishes curated for high-contrast kitchens with bespoke design intent.",
-    image:
-      "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80",
+    name: "Shoe Racks & Accessories",
+    description: "Shoe-rack profiles and complementary accessory options that complete the internal fittings offer.",
+    image: "/images/internal-fittings/shoe-rack-correct.png",
   },
 ];
 
@@ -78,8 +70,8 @@ const featurePoints = [
 
 const footerGroups = [
   {
-    label: "Collections",
-    links: ["Modern", "Classic", "Statement"],
+    label: "Internal Fittings",
+    links: ["MIRA System", "Hanging Rails", "Accessories"],
   },
   {
     label: "Trade",
@@ -215,23 +207,24 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="collections" className="py-24 sm:py-28">
+        <section id="internal-fittings" className="py-24 sm:py-28">
           <div className="container">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <div>
-                <p className="font-[Manrope] text-xs uppercase tracking-[0.34em] text-[#a78e68]">Eight Exquisite Collections</p>
+                <p className="font-[Manrope] text-xs uppercase tracking-[0.34em] text-[#a78e68]">Internal Fittings</p>
                 <h2 className="mt-5 max-w-[11ch] font-[Cormorant_Garamond] text-5xl leading-[0.96] font-light tracking-[-0.04em] text-[#f5eee3] sm:text-6xl">
-                  Crafted ranges for every interior language.
+                  Modular wardrobe interiors with premium Italian detailing.
                 </h2>
               </div>
               <p className="max-w-2xl font-[Manrope] text-base leading-8 text-[#a89983] lg:justify-self-end">
-                From minimalist elegance to statement-led forms, discover a collection designed to align
-                with your project’s atmosphere, material palette, and architectural character.
+                Discover a refined internal-fittings offer built around the Cosma MIRA system, including
+                hanging rails, shelf frames, pull-out frames, drawers, and accessory-led storage solutions
+                for bespoke wardrobes and premium interiors.
               </p>
             </div>
 
             <div className="mt-14 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-              {collections.map((collection, index) => (
+              {internalFittings.map((collection, index) => (
                 <article
                   key={collection.name}
                   className={`group relative overflow-hidden border border-white/10 bg-[#12100e] transition duration-500 hover:-translate-y-1 hover:border-[#b08d57]/40 ${
@@ -256,7 +249,7 @@ export default function Home() {
                     </div>
                     <p className="mt-4 font-[Manrope] text-sm leading-7 text-[#a89983]">{collection.description}</p>
                     <a
-                      href="#trade"
+                      href="#internal-fittings"
                       className="mt-6 inline-flex items-center gap-2 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#e4d0ad] transition hover:text-white"
                     >
                       Explore
@@ -357,7 +350,7 @@ export default function Home() {
                   {group.links.map((link) => (
                     <a
                       key={link}
-                      href={link === "Contact" ? "#contact" : link === "About" ? "#heritage" : link.includes("Trade") ? "#trade" : "#collections"}
+                      href={link === "Contact" ? "#contact" : link === "About" ? "#heritage" : link.includes("Trade") ? "#trade" : "#internal-fittings"}
                       className="font-[Manrope] text-sm text-[#d6c7b0] transition hover:text-white"
                     >
                       {link}

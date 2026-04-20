@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 
 const siteNavLinks = [
   ["Handles", "/handles"],
-  ["Collections", "/#collections"],
-  ["Heritage", "/#heritage"],
+  ["Internal Fittings", "/#internal-fittings"],
+  ["About", "/#heritage"],
   ["Trade Portal", "/handles/catalogue#trade-support"],
   ["Contact", "/#contact"],
 ] as const;
