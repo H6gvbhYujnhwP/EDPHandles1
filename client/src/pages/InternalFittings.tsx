@@ -1,11 +1,118 @@
-import { ArrowRight, PhoneCall } from "lucide-react";
+import { ArrowRight, Download, PhoneCall, X } from "lucide-react";
+import { FormEvent, useEffect, useState } from "react";
 import EnquiryFormSection from "@/components/site/EnquiryFormSection";
 import SiteFooter from "@/components/site/SiteFooter";
 import SiteHeader from "@/components/site/SiteHeader";
 import { Button } from "@/components/ui/button";
 import { companyProfile, internalFittings } from "@/lib/edpSiteContent";
 
+const catalogueDownloadAction = "https://formspree.io/f/mgorzben";
+const catalogueDownloadFile = "/catalogues/walldrobe-catalogue.pdf";
+const catalogueDownloadName = "Walldrobe Catalogue";
+
+type DownloadState = "idle" | "submitting" | "success" | "error";
+
+function startCatalogueDownload() {
+  const link = document.createElement("a");
+  link.href = catalogueDownloadFile;
+  link.download = "Walldrobe-Catalogue.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
 export default function InternalFittings() {
+  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
+  const [downloadName, setDownloadName] = useState("");
+  const [downloadEmail, setDownloadEmail] = useState("");
+  const [downloadState, setDownloadState] = useState<DownloadState>("idle");
+  const [downloadMessage, setDownloadMessage] = useState("");
+
+  useEffect(() => {
+    if (!downloadModalOpen) {
+      return;
+    }
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && downloadState !== "submitting") {
+        setDownloadModalOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [downloadModalOpen, downloadState]);
+
+  function openDownloadModal() {
+    setDownloadMessage("");
+    setDownloadState("idle");
+    setDownloadModalOpen(true);
+  }
+
+  function closeDownloadModal() {
+    if (downloadState === "submitting") {
+      return;
+    }
+
+    setDownloadModalOpen(false);
+  }
+
+  async function handleCatalogueRequest(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const trimmedName = downloadName.trim();
+    const trimmedEmail = downloadEmail.trim();
+
+    if (!trimmedName || !trimmedEmail) {
+      setDownloadState("error");
+      setDownloadMessage("Please enter your name and email address before downloading the catalogue.");
+      return;
+    }
+
+    setDownloadState("submitting");
+    setDownloadMessage("");
+
+    const formData = new FormData();
+    formData.append("name", trimmedName);
+    formData.append("email", trimmedEmail);
+    formData.append("_replyto", trimmedEmail);
+    formData.append("source_page", "Walldrobe Internal Fittings");
+    formData.append("request_type", "Catalogue Download");
+    formData.append("catalogue_name", catalogueDownloadName);
+    formData.append("catalogue_file", "walldrobe-catalogue.pdf");
+    formData.append(
+      "message",
+      `${trimmedName} requested the ${catalogueDownloadName}. Please follow up if needed.`
+    );
+    formData.append("_subject", "EDP catalogue download — Walldrobe Catalogue");
+
+    try {
+      const response = await fetch(catalogueDownloadAction, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error(`Catalogue request failed with status ${response.status}`);
+      }
+
+      startCatalogueDownload();
+      setDownloadState("success");
+      setDownloadMessage("Thank you. Your Walldrobe catalogue download is starting now.");
+      setDownloadName("");
+      setDownloadEmail("");
+    } catch (error) {
+      console.error("Walldrobe catalogue download submission failed", error);
+      setDownloadState("error");
+      setDownloadMessage(
+        "Sorry, there was a problem sending your details. Please try again or contact EDP directly."
+      );
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-[#b08d57]/30 selection:text-white">
       <div className="fixed inset-0 -z-20 bg-[#0a0908]" />
@@ -18,7 +125,7 @@ export default function InternalFittings() {
           <div className="container grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
             <div className="max-w-2xl">
               <p className="font-[Manrope] text-xs uppercase tracking-[0.34em] text-[#a78e68]">Internal Fittings</p>
-              <h1 className="mt-5 max-w-[10ch] font-[Cormorant_Garamond] text-6xl leading-[0.92] font-light tracking-[-0.04em] text-[#f5efe5] sm:text-7xl">
+              <h1 className="mt-5 max-w-[10ch] font-[Cormorant_Garamond] text-6xl font-light leading-[0.92] tracking-[-0.04em] text-[#f5efe5] sm:text-7xl">
                 Modular interiors for refined wardrobe design.
               </h1>
               <p className="mt-8 max-w-xl font-[Manrope] text-base leading-8 text-[#b5a893] sm:text-lg">
@@ -37,10 +144,11 @@ export default function InternalFittings() {
                   </a>
                 </Button>
                 <Button
-                  asChild
+                  type="button"
+                  onClick={openDownloadModal}
                   className="w-full rounded-none border border-white/14 bg-white/6 px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-white/12 sm:w-auto"
                 >
-                  <a href="/trade-portal">Trade Portal</a>
+                  Download Walldrobe Catalogue
                 </Button>
               </div>
             </div>
@@ -70,7 +178,7 @@ export default function InternalFittings() {
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <div>
                 <p className="font-[Manrope] text-xs uppercase tracking-[0.34em] text-[#a78e68]">MIRA Product Groups</p>
-                <h2 className="mt-5 max-w-[11ch] font-[Cormorant_Garamond] text-5xl leading-[0.96] font-light tracking-[-0.04em] text-[#f5eee3] sm:text-6xl">
+                <h2 className="mt-5 max-w-[11ch] font-[Cormorant_Garamond] text-5xl font-light leading-[0.96] tracking-[-0.04em] text-[#f5eee3] sm:text-6xl">
                   A complete interior system with premium detailing.
                 </h2>
               </div>
@@ -124,7 +232,7 @@ export default function InternalFittings() {
               <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(10,8,7,0.94),rgba(10,8,7,0.78)_55%,rgba(10,8,7,0.9))]" />
               <div className="relative max-w-2xl">
                 <p className="font-[Manrope] text-xs uppercase tracking-[0.34em] text-[#a78e68]">Specification Support</p>
-                <h2 className="mt-5 max-w-[10ch] font-[Cormorant_Garamond] text-5xl leading-[0.96] font-light tracking-[-0.04em] text-[#f5eee4] sm:text-6xl">
+                <h2 className="mt-5 max-w-[10ch] font-[Cormorant_Garamond] text-5xl font-light leading-[0.96] tracking-[-0.04em] text-[#f5eee4] sm:text-6xl">
                   Designed for premium interior projects across the UK.
                 </h2>
                 <p className="mt-8 max-w-xl font-[Manrope] text-base leading-8 text-[#c0b19a]">
@@ -132,10 +240,12 @@ export default function InternalFittings() {
                 </p>
                 <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                   <Button
-                    asChild
+                    type="button"
+                    onClick={openDownloadModal}
                     className="w-full rounded-none border border-[#d7be92]/45 bg-[#f5efe5] px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#ddc7a5] sm:w-auto"
                   >
-                    <a href="/trade-portal">Access Trade Portal</a>
+                    <Download className="mr-3 h-4 w-4" />
+                    Download Walldrobe Catalogue
                   </Button>
                   <Button
                     asChild
@@ -177,6 +287,108 @@ export default function InternalFittings() {
       </main>
 
       <SiteFooter />
+
+      {downloadModalOpen ? (
+        <div className="fixed inset-0 z-[90] flex items-center justify-center bg-black/70 px-4 py-10 backdrop-blur-sm">
+          <div className="w-full max-w-xl border border-white/12 bg-[#110f0d] p-8 shadow-[0_30px_120px_rgba(0,0,0,0.6)] sm:p-10">
+            <div className="flex items-start justify-between gap-6">
+              <div>
+                <p className="font-[Manrope] text-xs uppercase tracking-[0.3em] text-[#a78e68]">Catalogue Download</p>
+                <h2 className="mt-4 font-[Cormorant_Garamond] text-4xl font-light leading-none text-[#f5eee4] sm:text-5xl">
+                  Download the Walldrobe catalogue.
+                </h2>
+                <p className="mt-5 max-w-lg font-[Manrope] text-sm leading-7 text-[#b7a893] sm:text-base">
+                  Enter your name and email address to receive the Walldrobe catalogue download. EDP will
+                  also be notified that this specific catalogue has been requested.
+                </p>
+              </div>
+              <button
+                type="button"
+                aria-label="Close catalogue download dialog"
+                onClick={closeDownloadModal}
+                className="inline-flex h-11 w-11 items-center justify-center border border-white/10 bg-white/5 text-[#f5eee4] transition hover:bg-white/10"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            <form onSubmit={handleCatalogueRequest} className="mt-8 grid gap-5">
+              <div className="grid gap-5 sm:grid-cols-2">
+                <label className="flex flex-col gap-2">
+                  <span className="font-[Manrope] text-xs uppercase tracking-[0.22em] text-[#8d7960]">Name</span>
+                  <input
+                    type="text"
+                    value={downloadName}
+                    onChange={(event) => setDownloadName(event.target.value)}
+                    placeholder="Your full name"
+                    className="w-full border border-white/12 bg-[#0d0b0a] px-4 py-4 font-[Manrope] text-sm text-[#f5eee4] outline-none transition placeholder:text-[#706353] focus:border-[#b08d57]"
+                    autoComplete="name"
+                    required
+                  />
+                </label>
+                <label className="flex flex-col gap-2">
+                  <span className="font-[Manrope] text-xs uppercase tracking-[0.22em] text-[#8d7960]">Email address</span>
+                  <input
+                    type="email"
+                    value={downloadEmail}
+                    onChange={(event) => setDownloadEmail(event.target.value)}
+                    placeholder="you@example.com"
+                    className="w-full border border-white/12 bg-[#0d0b0a] px-4 py-4 font-[Manrope] text-sm text-[#f5eee4] outline-none transition placeholder:text-[#706353] focus:border-[#b08d57]"
+                    autoComplete="email"
+                    required
+                  />
+                </label>
+              </div>
+
+              <div className="border border-white/10 bg-white/[0.03] px-5 py-4">
+                <p className="font-[Manrope] text-xs uppercase tracking-[0.22em] text-[#8d7960]">Catalogue</p>
+                <p className="mt-2 font-[Cormorant_Garamond] text-3xl font-light text-[#f5eee4]">
+                  {catalogueDownloadName}
+                </p>
+                <p className="mt-2 font-[Manrope] text-sm leading-7 text-[#a89983]">
+                  This request sends EDP your name, your email address, and the catalogue reference before
+                  the download starts.
+                </p>
+              </div>
+
+              {downloadMessage ? (
+                <p
+                  role="status"
+                  aria-live="polite"
+                  className={`font-[Manrope] text-sm leading-7 ${
+                    downloadState === "success" ? "text-[#d7c29b]" : "text-[#d99883]"
+                  }`}
+                >
+                  {downloadMessage}
+                </p>
+              ) : null}
+
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <p className="max-w-md font-[Manrope] text-sm leading-7 text-[#8f826f]">
+                  By downloading, you agree that EDP may follow up regarding this catalogue request.
+                </p>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={closeDownloadModal}
+                    className="rounded-none border border-white/12 bg-transparent px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-white/10"
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    type="submit"
+                    disabled={downloadState === "submitting"}
+                    className="rounded-none border border-[#d7be92]/45 bg-[#f5efe5] px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#ddc7a5] disabled:cursor-not-allowed disabled:opacity-70"
+                  >
+                    {downloadState === "submitting" ? "Preparing Download..." : "Download Walldrobe Catalogue"}
+                  </Button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

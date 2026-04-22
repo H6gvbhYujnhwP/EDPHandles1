@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const siteNavLinks = [
   ["Handles", "/handles"],
-  ["Internal Fittings", "/internal-fittings"],
+  ["Walldrobe Internal Fittings", "/internal-fittings"],
   ["About", "/about"],
   ["Trade Portal", "/trade-portal"],
   ["Contact", "/contact"],

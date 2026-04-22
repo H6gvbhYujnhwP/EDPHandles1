@@ -37,4 +37,10 @@ This repository tracks the **full EDP Handles website** as one progressive live 
 | [x] | Keep all shared enquiry form submissions on-page instead of redirecting to Formspree |
 | [x] | Show an in-page confirmation message after successful submission across all form locations |
 | [x] | Verify the updated submission behaviour on every page using the shared enquiry form |
+| [ ] | Investigate why ESET is blocking the new `edphandles.com` domain and identify remediation steps |
+| [ ] | Submit `edphandles.com` to additional reputation and verification review channels beyond ESET |
+| [x] | Rename the top-bar `Internal Fittings` label to `Walldrobe Internal Fittings` |
+| [x] | Replace the Internal Fittings page `Trade Portal` button with a gated `Download Walldrobe Catalogue` flow |
+| [x] | Require name and email before the Walldrobe catalogue download and send downloader details through Formspree |
+| [x] | Verify the Walldrobe catalogue download flow locally and push the approved update to `main` |
 | [ ] | Push the next production-safe update to `main` |
