@@ -290,7 +290,7 @@ export default function InternalFittings() {
 
       {downloadModalOpen ? (
         <div className="fixed inset-0 z-[90] flex items-center justify-center bg-black/70 px-4 py-10 backdrop-blur-sm">
-          <div className="w-full max-w-xl border border-white/12 bg-[#110f0d] p-8 shadow-[0_30px_120px_rgba(0,0,0,0.6)] sm:p-10">
+          <div className="w-full max-w-2xl border border-white/12 bg-[#110f0d] p-8 shadow-[0_30px_120px_rgba(0,0,0,0.6)] sm:p-10">
             <div className="flex items-start justify-between gap-6">
               <div>
                 <p className="font-[Manrope] text-xs uppercase tracking-[0.3em] text-[#a78e68]">Catalogue Download</p>
@@ -363,23 +363,23 @@ export default function InternalFittings() {
                 </p>
               ) : null}
 
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                <p className="max-w-md font-[Manrope] text-sm leading-7 text-[#8f826f]">
+              <div className="border-t border-white/10 pt-6">
+                <p className="max-w-full font-[Manrope] text-sm leading-7 text-[#8f826f]">
                   By downloading, you agree that EDP may follow up regarding this catalogue request.
                 </p>
-                <div className="flex flex-col gap-3 sm:flex-row">
+                <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:justify-end">
                   <Button
                     type="button"
                     variant="outline"
                     onClick={closeDownloadModal}
-                    className="rounded-none border border-white/12 bg-transparent px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-white/10"
+                    className="rounded-none border border-white/12 bg-transparent px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-white/10 sm:w-auto"
                   >
                     Cancel
                   </Button>
                   <Button
                     type="submit"
                     disabled={downloadState === "submitting"}
-                    className="rounded-none border border-[#d7be92]/45 bg-[#f5efe5] px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#ddc7a5] disabled:cursor-not-allowed disabled:opacity-70"
+                    className="rounded-none border border-[#d7be92]/45 bg-[#f5efe5] px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#ddc7a5] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
                   >
                     {downloadState === "submitting" ? "Preparing Download..." : "Download Walldrobe Catalogue"}
                   </Button>

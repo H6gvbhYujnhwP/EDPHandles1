@@ -43,4 +43,7 @@ This repository tracks the **full EDP Handles website** as one progressive live 
 | [x] | Replace the Internal Fittings page `Trade Portal` button with a gated `Download Walldrobe Catalogue` flow |
 | [x] | Require name and email before the Walldrobe catalogue download and send downloader details through Formspree |
 | [x] | Verify the Walldrobe catalogue download flow locally and push the approved update to `main` |
+| [x] | Fix the broken Walldrobe catalogue modal layout so consent copy and controls align correctly |
+| [x] | Verify the corrected Walldrobe catalogue modal layout locally |
+| [ ] | Push the Walldrobe catalogue modal layout fix to `main` |
 | [ ] | Push the next production-safe update to `main` |
