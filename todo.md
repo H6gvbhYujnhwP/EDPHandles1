@@ -45,5 +45,8 @@ This repository tracks the **full EDP Handles website** as one progressive live 
 | [x] | Verify the Walldrobe catalogue download flow locally and push the approved update to `main` |
 | [x] | Fix the broken Walldrobe catalogue modal layout so consent copy and controls align correctly |
 | [x] | Verify the corrected Walldrobe catalogue modal layout locally |
-| [ ] | Push the Walldrobe catalogue modal layout fix to `main` |
+| [x] | Push the Walldrobe catalogue modal layout fix to `main` |
+| [x] | Replace the Walldrobe catalogue form with a success state after download |
+| [x] | Add a clear thank-you message to the Walldrobe catalogue modal after successful download |
+| [ ] | Push the Walldrobe post-download success-state update to `main` |
 | [ ] | Push the next production-safe update to `main` |

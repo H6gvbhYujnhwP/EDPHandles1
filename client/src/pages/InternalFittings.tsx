@@ -101,7 +101,7 @@ export default function InternalFittings() {
 
       startCatalogueDownload();
       setDownloadState("success");
-      setDownloadMessage("Thank you. Your Walldrobe catalogue download is starting now.");
+      setDownloadMessage("Thank you — your Walldrobe catalogue download has started");
       setDownloadName("");
       setDownloadEmail("");
     } catch (error) {
@@ -312,80 +312,102 @@ export default function InternalFittings() {
               </button>
             </div>
 
-            <form onSubmit={handleCatalogueRequest} className="mt-8 grid gap-5">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <label className="flex flex-col gap-2">
-                  <span className="font-[Manrope] text-xs uppercase tracking-[0.22em] text-[#8d7960]">Name</span>
-                  <input
-                    type="text"
-                    value={downloadName}
-                    onChange={(event) => setDownloadName(event.target.value)}
-                    placeholder="Your full name"
-                    className="w-full border border-white/12 bg-[#0d0b0a] px-4 py-4 font-[Manrope] text-sm text-[#f5eee4] outline-none transition placeholder:text-[#706353] focus:border-[#b08d57]"
-                    autoComplete="name"
-                    required
-                  />
-                </label>
-                <label className="flex flex-col gap-2">
-                  <span className="font-[Manrope] text-xs uppercase tracking-[0.22em] text-[#8d7960]">Email address</span>
-                  <input
-                    type="email"
-                    value={downloadEmail}
-                    onChange={(event) => setDownloadEmail(event.target.value)}
-                    placeholder="you@example.com"
-                    className="w-full border border-white/12 bg-[#0d0b0a] px-4 py-4 font-[Manrope] text-sm text-[#f5eee4] outline-none transition placeholder:text-[#706353] focus:border-[#b08d57]"
-                    autoComplete="email"
-                    required
-                  />
-                </label>
-              </div>
-
-              <div className="border border-white/10 bg-white/[0.03] px-5 py-4">
-                <p className="font-[Manrope] text-xs uppercase tracking-[0.22em] text-[#8d7960]">Catalogue</p>
-                <p className="mt-2 font-[Cormorant_Garamond] text-3xl font-light text-[#f5eee4]">
-                  {catalogueDownloadName}
-                </p>
-                <p className="mt-2 font-[Manrope] text-sm leading-7 text-[#a89983]">
-                  This request sends EDP your name, your email address, and the catalogue reference before
-                  the download starts.
-                </p>
-              </div>
-
-              {downloadMessage ? (
-                <p
-                  role="status"
-                  aria-live="polite"
-                  className={`font-[Manrope] text-sm leading-7 ${
-                    downloadState === "success" ? "text-[#d7c29b]" : "text-[#d99883]"
-                  }`}
-                >
+            {downloadState === "success" ? (
+              <div className="mt-8 border border-[#d7be92]/20 bg-white/[0.03] p-8 sm:p-10">
+                <p className="font-[Manrope] text-xs uppercase tracking-[0.3em] text-[#a78e68]">Download started</p>
+                <h3 className="mt-4 font-[Cormorant_Garamond] text-4xl font-light leading-none text-[#f5eee4] sm:text-5xl">
+                  Thank you.
+                </h3>
+                <p role="status" aria-live="polite" className="mt-5 max-w-xl font-[Manrope] text-base leading-8 text-[#d7c29b]">
                   {downloadMessage}
                 </p>
-              ) : null}
-
-              <div className="border-t border-white/10 pt-6">
-                <p className="max-w-full font-[Manrope] text-sm leading-7 text-[#8f826f]">
-                  By downloading, you agree that EDP may follow up regarding this catalogue request.
+                <p className="mt-4 max-w-xl font-[Manrope] text-sm leading-7 text-[#a89983]">
+                  If the file does not open automatically, you can close this window and click the download button again.
                 </p>
-                <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:justify-end">
+                <div className="mt-8 flex justify-end">
                   <Button
                     type="button"
-                    variant="outline"
                     onClick={closeDownloadModal}
-                    className="rounded-none border border-white/12 bg-transparent px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-white/10 sm:w-auto"
+                    className="rounded-none border border-[#d7be92]/45 bg-[#f5efe5] px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#ddc7a5]"
                   >
-                    Cancel
-                  </Button>
-                  <Button
-                    type="submit"
-                    disabled={downloadState === "submitting"}
-                    className="rounded-none border border-[#d7be92]/45 bg-[#f5efe5] px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#ddc7a5] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
-                  >
-                    {downloadState === "submitting" ? "Preparing Download..." : "Download Walldrobe Catalogue"}
+                    Done
                   </Button>
                 </div>
               </div>
-            </form>
+            ) : (
+              <form onSubmit={handleCatalogueRequest} className="mt-8 grid gap-5">
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <label className="flex flex-col gap-2">
+                    <span className="font-[Manrope] text-xs uppercase tracking-[0.22em] text-[#8d7960]">Name</span>
+                    <input
+                      type="text"
+                      value={downloadName}
+                      onChange={(event) => setDownloadName(event.target.value)}
+                      placeholder="Your full name"
+                      className="w-full border border-white/12 bg-[#0d0b0a] px-4 py-4 font-[Manrope] text-sm text-[#f5eee4] outline-none transition placeholder:text-[#706353] focus:border-[#b08d57]"
+                      autoComplete="name"
+                      required
+                    />
+                  </label>
+                  <label className="flex flex-col gap-2">
+                    <span className="font-[Manrope] text-xs uppercase tracking-[0.22em] text-[#8d7960]">Email address</span>
+                    <input
+                      type="email"
+                      value={downloadEmail}
+                      onChange={(event) => setDownloadEmail(event.target.value)}
+                      placeholder="you@example.com"
+                      className="w-full border border-white/12 bg-[#0d0b0a] px-4 py-4 font-[Manrope] text-sm text-[#f5eee4] outline-none transition placeholder:text-[#706353] focus:border-[#b08d57]"
+                      autoComplete="email"
+                      required
+                    />
+                  </label>
+                </div>
+
+                <div className="border border-white/10 bg-white/[0.03] px-5 py-4">
+                  <p className="font-[Manrope] text-xs uppercase tracking-[0.22em] text-[#8d7960]">Catalogue</p>
+                  <p className="mt-2 font-[Cormorant_Garamond] text-3xl font-light text-[#f5eee4]">
+                    {catalogueDownloadName}
+                  </p>
+                  <p className="mt-2 font-[Manrope] text-sm leading-7 text-[#a89983]">
+                    This request sends EDP your name, your email address, and the catalogue reference before
+                    the download starts.
+                  </p>
+                </div>
+
+                {downloadMessage ? (
+                  <p
+                    role="status"
+                    aria-live="polite"
+                    className="font-[Manrope] text-sm leading-7 text-[#d99883]"
+                  >
+                    {downloadMessage}
+                  </p>
+                ) : null}
+
+                <div className="border-t border-white/10 pt-6">
+                  <p className="max-w-full font-[Manrope] text-sm leading-7 text-[#8f826f]">
+                    By downloading, you agree that EDP may follow up regarding this catalogue request.
+                  </p>
+                  <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:justify-end">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={closeDownloadModal}
+                      className="rounded-none border border-white/12 bg-transparent px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-white/10 sm:w-auto"
+                    >
+                      Cancel
+                    </Button>
+                    <Button
+                      type="submit"
+                      disabled={downloadState === "submitting"}
+                      className="rounded-none border border-[#d7be92]/45 bg-[#f5efe5] px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#ddc7a5] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+                    >
+                      {downloadState === "submitting" ? "Preparing Download..." : "Download Walldrobe Catalogue"}
+                    </Button>
+                  </div>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       ) : null}
