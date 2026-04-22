@@ -53,4 +53,8 @@ This repository tracks the **full EDP Handles website** as one progressive live 
 | [x] | Extract text and images from the TELA PDF to build the new page content |
 | [x] | Add the same gated PDF download flow to the new TELA page with the approved thank-you behavior |
 | [x] | Verify the new TELA page and push the completed update to `main` |
+| [x] | Add a new `COSMA EXPRESS RANGE` page and place it in the shared navigation |
+| [x] | Extract text and images from the COSMA Express PDF to build the new page content |
+| [x] | Add the same gated PDF download flow to the new COSMA EXPRESS RANGE page with the established thank-you behavior |
+| [x] | Verify the new COSMA EXPRESS RANGE page locally and push the completed update to `main` |
 | [ ] | Push the next production-safe update to `main` |

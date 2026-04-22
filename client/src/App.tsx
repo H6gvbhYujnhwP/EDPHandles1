@@ -16,6 +16,7 @@ import Handles from "./pages/Handles";
 import HandlesShowcase from "./pages/HandlesShowcase";
 import Home from "./pages/Home";
 import InternalFittings from "./pages/InternalFittings";
+import CosmaExpressRange from "./pages/CosmaExpressRange";
 import TelaGlassDoorsSystems from "./pages/TelaGlassDoorsSystems";
 import TradePortal from "./pages/TradePortal";
 
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/internal-fittings" component={InternalFittings} />
       <Route path="/tela-glass-doors-systems" component={TelaGlassDoorsSystems} />
+      <Route path="/cosma-express-range" component={CosmaExpressRange} />
       <Route path="/about" component={About} />
       <Route path="/trade-portal" component={TradePortal} />
       <Route path="/contact" component={Contact} />

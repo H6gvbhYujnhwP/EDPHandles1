@@ -7,6 +7,7 @@ const footerGroups = [
       ["Handles", "/handles"],
       ["Walldrobe Internal Fittings", "/internal-fittings"],
       ["TELA Glass Doors Systems", "/tela-glass-doors-systems"],
+      ["COSMA EXPRESS RANGE", "/cosma-express-range"],
     ],
   },
   {
@@ -51,7 +52,7 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {footerGroups.map((group) => (
             <div key={group.label}>
               <p className="font-[Manrope] text-xs uppercase tracking-[0.24em] text-[#88755d]">{group.label}</p>
