@@ -48,5 +48,9 @@ This repository tracks the **full EDP Handles website** as one progressive live 
 | [x] | Push the Walldrobe catalogue modal layout fix to `main` |
 | [x] | Replace the Walldrobe catalogue form with a success state after download |
 | [x] | Add a clear thank-you message to the Walldrobe catalogue modal after successful download |
-| [ ] | Push the Walldrobe post-download success-state update to `main` |
+| [x] | Push the Walldrobe post-download success-state update to `main` |
+| [x] | Add a new `TELA Glass Doors Systems` page and place it beside `Walldrobe Internal Fittings` in the top navigation |
+| [x] | Extract text and images from the TELA PDF to build the new page content |
+| [x] | Add the same gated PDF download flow to the new TELA page with the approved thank-you behavior |
+| [x] | Verify the new TELA page and push the completed update to `main` |
 | [ ] | Push the next production-safe update to `main` |

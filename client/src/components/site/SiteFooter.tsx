@@ -5,7 +5,8 @@ const footerGroups = [
     label: "Collections",
     links: [
       ["Handles", "/handles"],
-      ["Internal Fittings", "/internal-fittings"],
+      ["Walldrobe Internal Fittings", "/internal-fittings"],
+      ["TELA Glass Doors Systems", "/tela-glass-doors-systems"],
     ],
   },
   {

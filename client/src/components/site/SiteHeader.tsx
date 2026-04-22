@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 const siteNavLinks = [
   ["Handles", "/handles"],
   ["Walldrobe Internal Fittings", "/internal-fittings"],
+  ["TELA Glass Doors Systems", "/tela-glass-doors-systems"],
   ["About", "/about"],
   ["Trade Portal", "/trade-portal"],
   ["Contact", "/contact"],
@@ -40,12 +41,12 @@ export default function SiteHeader() {
             </div>
           </a>
 
-          <nav className="hidden items-center gap-8 lg:flex">
+          <nav className="hidden items-center gap-6 xl:gap-8 lg:flex">
             {siteNavLinks.map(([label, href]) => (
               <a
                 key={label}
                 href={href}
-                className="font-[Manrope] text-sm tracking-[0.18em] text-[#d9cab1] transition duration-300 hover:text-white"
+                className="font-[Manrope] text-xs tracking-[0.16em] text-[#d9cab1] transition duration-300 hover:text-white xl:text-sm xl:tracking-[0.18em]"
               >
                 {label}
               </a>
