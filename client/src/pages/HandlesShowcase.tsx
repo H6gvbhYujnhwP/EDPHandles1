@@ -38,16 +38,11 @@ export default function HandlesShowcase() {
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent_24%,rgba(0,0,0,0.2))]" />
 
             <div className="relative z-10 flex min-h-[720px] max-w-3xl flex-col justify-between px-8 py-10 sm:px-12 md:px-16 md:py-14">
-              <div className="max-w-xl space-y-8 pt-8 md:pt-12">
+              <div className="max-w-xl space-y-6 pt-8 md:pt-12">
                 <p className="label-kicker">Option A — Neo-Atelier Italian Editorial</p>
-                <div className="space-y-5">
-                  <h1 className="font-display text-balance text-5xl font-semibold leading-[0.92] text-stone-50 sm:text-6xl md:text-7xl">
-                    Six families, presented with the restraint of a private showroom.
-                  </h1>
-                  <p className="max-w-lg text-base leading-8 text-stone-300 sm:text-lg">
-                    The `/handles` section now frames the agreed family structure through a calmer editorial lens so clients can understand the range without losing the material confidence of the brand.
-                  </p>
-                </div>
+                <h1 className="font-display max-w-4xl text-balance text-5xl font-semibold leading-[0.92] text-stone-50 sm:text-6xl md:text-7xl">
+                  Six families, presented with the restraint of a private showroom.
+                </h1>
                 <div className="flex flex-col gap-4 sm:flex-row">
                   <a
                     href="#collections"
