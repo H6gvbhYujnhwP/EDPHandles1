@@ -57,7 +57,9 @@ This repository tracks the **full EDP Handles website** as one progressive live 
 | [x] | Extract text and images from the COSMA Express PDF to build the new page content |
 | [x] | Add the same gated PDF download flow to the new COSMA EXPRESS RANGE page with the established thank-you behavior |
 | [x] | Verify the new COSMA EXPRESS RANGE page locally and push the completed update to `main` |
-| [ ] | Remove the specified editorial sentence from the `/handles` page |
-| [ ] | Realign the `/handles` page layout after removing the editorial sentence |
-| [ ] | Verify the cleaned `/handles` page locally and push the update to `main` |
+| [x] | Remove the specified editorial sentence from the `/handles` page |
+| [x] | Realign the `/handles` page layout after removing the editorial sentence |
+| [x] | Verify the cleaned `/handles` page locally and push the update to `main` |
+| [x] | Fix the overflowing `/handles` hero panel and headline on smaller viewports |
+| [x] | Verify the corrected `/handles` mobile hero layout locally and push the update to `main` |
 | [ ] | Push the next production-safe update to `main` |

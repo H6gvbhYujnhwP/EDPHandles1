@@ -39,8 +39,8 @@ export default function HandlesShowcase() {
 
             <div className="relative z-10 flex min-h-[720px] max-w-3xl flex-col justify-between px-8 py-10 sm:px-12 md:px-16 md:py-14">
               <div className="max-w-xl space-y-6 pt-8 md:pt-12">
-                <p className="label-kicker">Option A — Neo-Atelier Italian Editorial</p>
-                <h1 className="font-display max-w-4xl text-balance text-5xl font-semibold leading-[0.92] text-stone-50 sm:text-6xl md:text-7xl">
+                <p className="label-kicker max-w-[22rem] whitespace-normal text-[0.7rem] leading-6 tracking-[0.18em] sm:max-w-none sm:text-xs sm:tracking-[0.24em]">Option A — Neo-Atelier Italian Editorial</p>
+                <h1 className="font-display max-w-[10ch] text-[clamp(3.3rem,13vw,4.9rem)] font-semibold leading-[0.94] text-stone-50 sm:max-w-4xl sm:text-balance sm:text-6xl md:text-7xl">
                   Six families, presented with the restraint of a private showroom.
                 </h1>
                 <div className="flex flex-col gap-4 sm:flex-row">
@@ -52,7 +52,7 @@ export default function HandlesShowcase() {
                   </a>
                   <a
                     href="/handles/catalogue"
-                    className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.2em] text-stone-100 transition duration-300 hover:border-[rgba(214,192,154,0.42)] hover:bg-white/10"
+                    className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-center text-sm font-semibold uppercase tracking-[0.16em] text-stone-100 transition duration-300 hover:border-[rgba(214,192,154,0.42)] hover:bg-white/10 sm:px-7 sm:tracking-[0.2em]"
                   >
                     View Catalogue Layout
                   </a>
