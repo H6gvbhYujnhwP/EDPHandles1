@@ -241,7 +241,7 @@ export default function HandlesShowcase() {
 
           <div className="editorial-panel overflow-hidden rounded-[2rem] p-4 md:p-5">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663048135071/fRVbFQ3JDagBgP7ipYs35A/edp-architectural-interior-UeB5quf5SZTnWuY5qpLt8R.webp"
+              src="/images/handles/handles-interior-application.png"
               alt="Architectural interior with refined metal hardware and dark joinery"
               className="h-[420px] w-full rounded-[1.5rem] object-cover"
             />
