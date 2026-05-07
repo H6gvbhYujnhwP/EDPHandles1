@@ -68,3 +68,8 @@ This repository tracks the **full EDP Handles website** as one progressive live 
 | [x] | Verify the updated MIRA Wardrobe Internal Fittings page locally after the image swap |
 | [x] | Mark the MIRA wardrobe image replacement task as complete in `todo.md` |
 | [x] | Push the verified MIRA wardrobe image replacement commit to `main` using the refreshed GitHub credentials |
+| [x] | Reassign the current Shelf Frames product-card image to the MIRA System card on the Walldrobe Internal Fittings page |
+| [x] | Copy the newly provided Shelf Frames replacement image into the site asset path |
+| [x] | Replace the Shelf Frames product-card image with the newly provided asset |
+| [x] | Verify the updated MIRA System and Shelf Frames cards locally after the image changes |
+| [x] | Prepare the verified Walldrobe product-card image changes for GitHub delivery |

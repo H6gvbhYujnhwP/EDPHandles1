@@ -17,7 +17,7 @@ export const internalFittings: InternalFittingItem[] = [
     name: "MIRA System",
     description:
       "A modular wardrobe-organisation system designed around refined aluminium profiles, soft edges, and fast custom assembly.",
-    image: "/images/internal-fittings-mira-hero.jpg",
+    image: "/images/internal-fittings/pull-out-frame.jpg",
   },
   {
     name: "Hanging Rails",
@@ -29,7 +29,7 @@ export const internalFittings: InternalFittingItem[] = [
     name: "Shelf Frames",
     description:
       "Fixed shelf-frame components that create a clean internal architecture for glass or material shelf inserts.",
-    image: "/images/internal-fittings/pull-out-frame.jpg",
+    image: "/images/walldrobe/shelf-frames-replacement.png",
   },
   {
     name: "Pull-Out Frames",
