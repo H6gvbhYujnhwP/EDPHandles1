@@ -62,4 +62,8 @@ This repository tracks the **full EDP Handles website** as one progressive live 
 | [x] | Verify the cleaned `/handles` page locally and push the update to `main` |
 | [x] | Fix the overflowing `/handles` hero panel and headline on smaller viewports |
 | [x] | Verify the corrected `/handles` mobile hero layout locally and push the update to `main` |
-| [ ] | Push the next production-safe update to `main` |
+| [x] | Push the next production-safe update to `main` |
+| [x] | Copy the user-provided wardrobe image into the site asset path for the MIRA internal fittings page |
+| [x] | Replace the first image in the `Modular interiors for refined wardrobe design.` section on `client/src/pages/InternalFittings.tsx` |
+| [x] | Verify the updated MIRA Wardrobe Internal Fittings page locally after the image swap |
+| [x] | Mark the MIRA wardrobe image replacement task as complete in `todo.md` |

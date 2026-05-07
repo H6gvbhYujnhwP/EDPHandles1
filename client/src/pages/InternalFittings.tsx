@@ -157,7 +157,7 @@ export default function InternalFittings() {
               <div className="absolute -inset-6 hidden border border-[#b08d57]/20 lg:block" />
               <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#12100e] p-3 shadow-[0_30px_120px_rgba(0,0,0,0.5)]">
                 <img
-                  src="/images/internal-fittings-mira-hero.jpg"
+                  src="/images/walldrobe/modular-interiors-hero.png"
                   alt="Wardrobe interior featuring the Cosma MIRA modular storage system"
                   className="h-[28rem] w-full rounded-[1.4rem] object-cover object-center sm:h-[36rem]"
                 />
