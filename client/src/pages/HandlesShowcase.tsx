@@ -78,12 +78,6 @@ export default function HandlesShowcase() {
         </div>
       </section>
 
-      <EnquiryFormSection
-        pageName="Handles"
-        eyebrow="Handles Enquiry"
-        title="Discuss handle families, finishes, and project requirements."
-        intro="Use the enquiry form to discuss handle collections, finish selection, stockholding, and specification support for furniture, kitchen, and interior projects."
-      />
 
       <section id="collections" className="relative py-16 md:py-24">
         <div className="container space-y-12">
@@ -284,6 +278,13 @@ export default function HandlesShowcase() {
           </div>
         </div>
       </section>
+
+      <EnquiryFormSection
+        pageName="Handles"
+        eyebrow="Handles Enquiry"
+        title="Discuss handle families, finishes, and project requirements."
+        intro="Use the enquiry form to discuss handle collections, finish selection, stockholding, and specification support for furniture, kitchen, and interior projects."
+      />
     </main>
   );
 }

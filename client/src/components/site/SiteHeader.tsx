@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const siteNavLinks = [
-  ["Handles", "/handles"],
-  ["Walldrobe Internal Fittings", "/internal-fittings"],
+  ["Cosma Handles", "/handles"],
+  ["MIRA Wardrobe Internal Fittings", "/internal-fittings"],
   ["TELA Glass Doors Systems", "/tela-glass-doors-systems"],
   ["COSMA EXPRESS RANGE", "/cosma-express-range"],
   ["About", "/about"],
@@ -37,7 +37,7 @@ export default function SiteHeader() {
             <div>
               <p className="font-[Manrope] text-base font-semibold tracking-wide text-white">EDP Handles</p>
               <p className="font-[Manrope] text-xs uppercase tracking-[0.28em] text-[#a68e68]">
-                Italian Craftsmanship
+                COSMA ITALIAN CRAFTMANSHIP
               </p>
             </div>
           </a>
@@ -54,7 +54,13 @@ export default function SiteHeader() {
             ))}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden items-center gap-4 lg:flex">
+            <a
+              href="tel:01702618877"
+              className="font-[Manrope] text-xs font-semibold uppercase tracking-[0.18em] text-[#d9cab1] transition duration-300 hover:text-white"
+            >
+              Tel. 01702 618877
+            </a>
             <Button
               asChild
               className="rounded-none border border-[#c6a66b]/40 bg-[#f6f0e6] px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#d8c2a0]"
@@ -86,6 +92,13 @@ export default function SiteHeader() {
                   {label}
                 </a>
               ))}
+              <a
+                href="tel:01702618877"
+                className="font-[Manrope] text-sm uppercase tracking-[0.18em] text-[#d9cab1]"
+                onClick={() => setMobileOpen(false)}
+              >
+                Tel. 01702 618877
+              </a>
               <Button
                 asChild
                 className="mt-2 w-full rounded-none border border-[#c6a66b]/40 bg-[#f6f0e6] py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#d8c2a0]"
