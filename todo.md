@@ -82,3 +82,7 @@ This repository tracks the **full EDP Handles website** as one progressive live 
 | [x] | Restore the image previously used in the `Distribution speed without losing the premium Cosma language.` section |
 | [x] | Verify the corrected COSMA EXPRESS RANGE image placements locally after the fix |
 | [x] | Prepare the verified COSMA Express image correction for GitHub delivery |
+| [x] | Copy the newly provided 2026 MIRA catalogue PDF into the site asset path |
+| [x] | Replace the outdated PDF download on the MIRA Wardrobe Internal Fittings page with the new catalogue |
+| [x] | Verify the updated MIRA Wardrobe Internal Fittings download locally after the PDF replacement |
+| [x] | Prepare the verified MIRA catalogue replacement for GitHub delivery |

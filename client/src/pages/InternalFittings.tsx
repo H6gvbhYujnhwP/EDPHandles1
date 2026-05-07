@@ -7,15 +7,15 @@ import { Button } from "@/components/ui/button";
 import { companyProfile, internalFittings } from "@/lib/edpSiteContent";
 
 const catalogueDownloadAction = "https://formspree.io/f/mgorzben";
-const catalogueDownloadFile = "/catalogues/walldrobe-catalogue.pdf";
-const catalogueDownloadName = "Walldrobe Catalogue";
+const catalogueDownloadFile = "/catalogues/mira-wardrobe-internal-fittings-2026.pdf";
+const catalogueDownloadName = "MIRA Wardrobe Internal Fittings Catalogue 2026";
 
 type DownloadState = "idle" | "submitting" | "success" | "error";
 
 function startCatalogueDownload() {
   const link = document.createElement("a");
   link.href = catalogueDownloadFile;
-  link.download = "Walldrobe-Catalogue.pdf";
+  link.download = "MIRA-Wardrobe-Internal-Fittings-2026.pdf";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -76,15 +76,15 @@ export default function InternalFittings() {
     formData.append("name", trimmedName);
     formData.append("email", trimmedEmail);
     formData.append("_replyto", trimmedEmail);
-    formData.append("source_page", "Walldrobe Internal Fittings");
+    formData.append("source_page", "MIRA Wardrobe Internal Fittings");
     formData.append("request_type", "Catalogue Download");
     formData.append("catalogue_name", catalogueDownloadName);
-    formData.append("catalogue_file", "walldrobe-catalogue.pdf");
+    formData.append("catalogue_file", "mira-wardrobe-internal-fittings-2026.pdf");
     formData.append(
       "message",
       `${trimmedName} requested the ${catalogueDownloadName}. Please follow up if needed.`
     );
-    formData.append("_subject", "EDP catalogue download — Walldrobe Catalogue");
+    formData.append("_subject", "EDP catalogue download — MIRA Wardrobe Internal Fittings Catalogue 2026");
 
     try {
       const response = await fetch(catalogueDownloadAction, {
@@ -101,11 +101,11 @@ export default function InternalFittings() {
 
       startCatalogueDownload();
       setDownloadState("success");
-      setDownloadMessage("Thank you — your Walldrobe catalogue download has started");
+      setDownloadMessage("Thank you — your MIRA Wardrobe Internal Fittings catalogue download has started");
       setDownloadName("");
       setDownloadEmail("");
     } catch (error) {
-      console.error("Walldrobe catalogue download submission failed", error);
+      console.error("MIRA Wardrobe Internal Fittings catalogue download submission failed", error);
       setDownloadState("error");
       setDownloadMessage(
         "Sorry, there was a problem sending your details. Please try again or contact EDP directly."
@@ -148,7 +148,7 @@ export default function InternalFittings() {
                   onClick={openDownloadModal}
                   className="w-full rounded-none border border-white/14 bg-white/6 px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-white/12 sm:w-auto"
                 >
-                  Download Walldrobe Catalogue
+                  Download MIRA Wardrobe Catalogue
                 </Button>
               </div>
             </div>
@@ -245,7 +245,7 @@ export default function InternalFittings() {
                     className="w-full rounded-none border border-[#d7be92]/45 bg-[#f5efe5] px-6 py-6 font-[Manrope] text-xs font-semibold uppercase tracking-[0.2em] text-[#15110e] transition hover:bg-[#ddc7a5] sm:w-auto"
                   >
                     <Download className="mr-3 h-4 w-4" />
-                    Download Walldrobe Catalogue
+                    Download MIRA Wardrobe Catalogue
                   </Button>
                   <Button
                     asChild
@@ -295,10 +295,10 @@ export default function InternalFittings() {
               <div>
                 <p className="font-[Manrope] text-xs uppercase tracking-[0.3em] text-[#a78e68]">Catalogue Download</p>
                 <h2 className="mt-4 font-[Cormorant_Garamond] text-4xl font-light leading-none text-[#f5eee4] sm:text-5xl">
-                  Download the Walldrobe catalogue.
+                  Download the MIRA Wardrobe Internal Fittings catalogue.
                 </h2>
                 <p className="mt-5 max-w-lg font-[Manrope] text-sm leading-7 text-[#b7a893] sm:text-base">
-                  Enter your name and email address to receive the Walldrobe catalogue download. EDP will
+                  Enter your name and email address to receive the MIRA Wardrobe Internal Fittings catalogue download. EDP will
                   also be notified that this specific catalogue has been requested.
                 </p>
               </div>
