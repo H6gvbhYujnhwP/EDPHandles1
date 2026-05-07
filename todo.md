@@ -73,3 +73,8 @@ This repository tracks the **full EDP Handles website** as one progressive live 
 | [x] | Replace the Shelf Frames product-card image with the newly provided asset |
 | [x] | Verify the updated MIRA System and Shelf Frames cards locally after the image changes |
 | [x] | Prepare the verified Walldrobe product-card image changes for GitHub delivery |
+| [x] | Copy the newly provided COSMA Express replacement image into the site asset path |
+| [x] | Replace the first image on the COSMA EXPRESS RANGE page with the newly provided asset |
+| [x] | Reuse the displaced original first image as the second image in the `Handle families and furnishing systems held within the express programme.` section |
+| [x] | Verify the updated COSMA EXPRESS RANGE page locally after the image changes |
+| [x] | Prepare the verified COSMA Express image changes for GitHub delivery |
