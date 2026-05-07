@@ -4,8 +4,8 @@ const footerGroups = [
   {
     label: "Collections",
     links: [
-      ["Handles", "/handles"],
-      ["Walldrobe Internal Fittings", "/internal-fittings"],
+      ["Cosma Handles", "/handles"],
+      ["MIRA Wardrobe Internal Fittings", "/internal-fittings"],
       ["TELA Glass Doors Systems", "/tela-glass-doors-systems"],
       ["COSMA EXPRESS RANGE", "/cosma-express-range"],
     ],
@@ -49,6 +49,7 @@ export default function SiteFooter() {
             <p>{companyProfile.addressLines[0]}</p>
             <p>{companyProfile.addressLines[1]}</p>
             <p>{companyProfile.phoneLabel}</p>
+            <p>Exclusive UK Agents and Distributors for Cosma Italy .</p>
           </div>
         </div>
 

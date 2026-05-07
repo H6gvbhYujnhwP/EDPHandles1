@@ -34,7 +34,7 @@ export default function Home() {
               </h1>
 
               <p className="mt-8 max-w-xl font-[Manrope] text-base leading-8 text-[#b5a893] sm:text-lg">
-                Bringing three decades of Italian craftsmanship to British kitchens and interiors. EDP
+                Bringing seven decades of Cosma Italian craftsmanship to British kitchens and interiors. EDP
                 supplies premium cabinet handles and design-led fittings with the quality, finish, and
                 service expected by trade professionals across the UK.
               </p>
@@ -98,7 +98,7 @@ export default function Home() {
           <div className="container grid gap-16 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
             <div className="relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-[#12100e] p-3 shadow-[0_28px_80px_rgba(0,0,0,0.45)]">
               <img
-                src="/images/internal-fittings-mira-hero.jpg"
+                src="/images/homepage/cosma-wardrobe-showcase.png"
                 alt="Wardrobe interior featuring Cosma MIRA internal fittings"
                 className="h-[26rem] w-full rounded-[1.4rem] object-cover object-center sm:h-[32rem]"
               />

@@ -6,6 +6,7 @@ Integrate the six agreed handle families into the editorial structure without di
 */
 import { ArrowRight } from "lucide-react";
 import EnquiryFormSection from "@/components/site/EnquiryFormSection";
+import SiteFooter from "@/components/site/SiteFooter";
 import SiteHeader from "@/components/site/SiteHeader";
 import { handleApplications, handleFamilies, handleFinishes } from "@/lib/handleFamilies";
 
@@ -285,6 +286,8 @@ export default function HandlesShowcase() {
         title="Discuss handle families, finishes, and project requirements."
         intro="Use the enquiry form to discuss handle collections, finish selection, stockholding, and specification support for furniture, kitchen, and interior projects."
       />
+
+      <SiteFooter />
     </main>
   );
 }
