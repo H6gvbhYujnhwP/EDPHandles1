@@ -78,3 +78,7 @@ This repository tracks the **full EDP Handles website** as one progressive live 
 | [x] | Reuse the displaced original first image as the second image in the `Handle families and furnishing systems held within the express programme.` section |
 | [x] | Verify the updated COSMA EXPRESS RANGE page locally after the image changes |
 | [x] | Prepare the verified COSMA Express image changes for GitHub delivery |
+| [x] | Replace the silver-bar white-background image in the COSMA Express Range Overview section with the newly provided replacement asset |
+| [x] | Restore the image previously used in the `Distribution speed without losing the premium Cosma language.` section |
+| [x] | Verify the corrected COSMA EXPRESS RANGE image placements locally after the fix |
+| [x] | Prepare the verified COSMA Express image correction for GitHub delivery |

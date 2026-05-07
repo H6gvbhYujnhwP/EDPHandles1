@@ -279,8 +279,8 @@ export default function CosmaExpressRange() {
             <div className="relative order-2 lg:order-1">
               <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#13110f] p-3 shadow-[0_30px_120px_rgba(0,0,0,0.42)]">
                 <img
-                  src="/images/cosma-express/cosma-express-bridge.jpg"
-                  alt="Polished COSMA Express bridge handle shown as an isolated catalogue product image"
+                  src="/images/cosma-express/cosma-express-range-overview-replacement.png"
+                  alt="Dark Cosma handle pair displayed on a textured neutral plinth in an editorial product composition"
                   className="h-[24rem] w-full rounded-[1.4rem] object-cover object-center sm:h-[30rem]"
                 />
               </div>
@@ -329,8 +329,8 @@ export default function CosmaExpressRange() {
               </div>
               <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#12100f] p-3 sm:translate-y-10">
                 <img
-                  src="/images/cosma-express/cosma-express-hero.jpg"
-                  alt="COSMA Express premium stocked handle selection shown in a dark editorial close-up"
+                  src="/images/cosma-express/cosma-express-angular.jpg"
+                  alt="Angular dark COSMA Express handle shown in a clean isolated product composition"
                   className="h-72 w-full rounded-[1.25rem] object-cover object-center"
                 />
               </div>
