@@ -91,3 +91,7 @@ This repository tracks the **full EDP Handles website** as one progressive live 
 | [x] | Move the homepage `Start a handles or fittings conversation.` section and form to just above the footer |
 | [x] | Verify the updated header logo and homepage section placement locally |
 | [x] | Prepare the verified header and homepage layout changes for GitHub delivery |
+| [x] | Remove the box around the shared header logo mark |
+| [x] | Increase the shared header logo size to match the height of the adjacent three-line text block without changing its aspect ratio |
+| [x] | Verify the refined header logo locally after the size and framing update |
+| [x] | Prepare the verified header logo refinement for GitHub delivery |
