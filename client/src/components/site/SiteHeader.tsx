@@ -31,8 +31,12 @@ export default function SiteHeader() {
       <div className="container">
         <div className="flex items-center justify-between gap-6 py-4">
           <a href="/" className="flex items-center gap-3 text-left">
-            <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-[#c6a66b]/35 bg-white/5 text-sm font-semibold text-[#f1dfbf]">
-              E
+            <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-[#c6a66b]/35 bg-white/5 p-1.5">
+              <img
+                src="/images/site/logo-cosma-bianco.png"
+                alt="Cosma logo"
+                className="h-full w-full object-contain"
+              />
             </div>
             <div>
               <p className="font-[Manrope] text-base font-semibold tracking-wide text-white">EDP Handles</p>

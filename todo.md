@@ -86,3 +86,8 @@ This repository tracks the **full EDP Handles website** as one progressive live 
 | [x] | Replace the outdated PDF download on the MIRA Wardrobe Internal Fittings page with the new catalogue |
 | [x] | Verify the updated MIRA Wardrobe Internal Fittings download locally after the PDF replacement |
 | [x] | Prepare the verified MIRA catalogue replacement for GitHub delivery |
+| [x] | Copy the supplied header logo image into the site asset path |
+| [x] | Replace the top-left header mark with the supplied logo image across the site header |
+| [x] | Move the homepage `Start a handles or fittings conversation.` section and form to just above the footer |
+| [x] | Verify the updated header logo and homepage section placement locally |
+| [x] | Prepare the verified header and homepage layout changes for GitHub delivery |

@@ -87,13 +87,6 @@ export default function Home() {
           </div>
         </section>
 
-        <EnquiryFormSection
-          pageName="Homepage"
-          eyebrow="General Enquiry"
-          title="Start a handles or fittings conversation."
-          intro="Use the enquiry form to discuss premium handles, internal fittings, stockholding, finish options, and project-led advice with EDP before moving deeper into the range."
-        />
-
         <section className="border-y border-white/8 bg-[#161311]/70 py-24 sm:py-28">
           <div className="container grid gap-16 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
             <div className="relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-[#12100e] p-3 shadow-[0_28px_80px_rgba(0,0,0,0.45)]">
@@ -241,6 +234,13 @@ export default function Home() {
             </aside>
           </div>
         </section>
+
+        <EnquiryFormSection
+          pageName="Homepage"
+          eyebrow="General Enquiry"
+          title="Start a handles or fittings conversation."
+          intro="Use the enquiry form to discuss premium handles, internal fittings, stockholding, finish options, and project-led advice with EDP before moving deeper into the range."
+        />
       </main>
 
       <SiteFooter />
